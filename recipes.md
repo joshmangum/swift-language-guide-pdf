@@ -31,7 +31,7 @@ Then open  `http://localhost:8080` in your browser.
 
 ### Transform html
 
-The script `assemble_html.py` takes each of the sections of the Language Guide and makes a single composite html page that can be printed.
+The script `assemble_html.py` takes each of the sections of the Language Guide and makes a single composite html page.
 
 From the top level repo directory run:
 
@@ -44,7 +44,7 @@ From the top level repo directory run:
 
 The script will put the new combined page in `<revision date>/final/docs.swift.org/swift-book/LanguageGuide/WholeBook.html`
 
-Now open `http://localhost:8080/LanguageGuide/WholeBook.html` in your browser. All the sections under "Language Guide" will be in one large html page. 
+Now open `http://localhost:8080/LanguageGuide/WholeBook.html` in your browser. All the sections under "Language Guide" will be there together in one html page. 
 
 ### Copy edited css to overwrite existing css file
 
