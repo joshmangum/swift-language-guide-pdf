@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Apple Inc." />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    
+    <title>Attributes &mdash; The Swift Programming Language (Swift 4.2)</title>
+    
+    <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
+    <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
+    <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
+    <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://docs.swift.org/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://docs.swift.org/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://docs.swift.org/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://docs.swift.org/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://docs.swift.org/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.swift.org/apple-touch-icon-180x180.png" />
+    <link rel="mask-icon" href="https://docs.swift.org/assets/images/icon-swift.svg" color="#F05339" /> 
+  </head>
+  <body>
+
+
+<nav role="navigation">
+    <header role="banner">
+      <h1 id="logo">
+        <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
+          Swift.org
+        </a>
+      </h1>
+    </header>
+
+    <div id="menu-toggle" class="menu-toggle open"></div>
+
+    <h2>The Swift Programming Language<div>Swift 4.2</div></h2>
+
+    <ul>
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Swift</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LanguageGuide/TheBasics.html">Language Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="AboutTheLanguageReference.html">Language Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="AboutTheLanguageReference.html">About the Language Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="LexicalStructure.html">Lexical Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Types.html">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Expressions.html">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Statements.html">Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Declarations.html">Declarations</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="Attributes.html#">Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Patterns.html">Patterns</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GenericParametersAndArguments.html">Generic Parameters and Arguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zzSummaryOfTheGrammar.html">Summary of the Grammar</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+</ul>
+
+    <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">← Return to Swift.org</a></li>
+    </ul>
+</nav>
+
+
+
+
+<main role="main">
+    <article class="page">
+        <menu id="bashful" type="toolbar">
+          <div class="inner">
+            <menuitem id="jump_to" class="menu-bar-item closed">
+            <span id="jump_to_toggle">On This Page</span>
+            <div class="chevron">
+                <div class="chevy chevron-left"></div>
+                <div class="chevy chevron-right"></div>
+            </div>
+            <menu type="list" class="details">
+                <ul>
+<li><a class="reference internal" href="Attributes.html#">Attributes</a><ul>
+<li><a class="reference internal" href="Attributes.html#ID348">Declaration Attributes</a><ul>
+<li><a class="reference internal" href="Attributes.html#ID349">Declaration Attributes Used by Interface Builder</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="Attributes.html#ID350">Type Attributes</a></li>
+</ul>
+</li>
+</ul>
+
+            </menu>
+            </menuitem>
+          </div>
+        </menu>
+
+        
+  <div class="section" id="attributes">
+<h1>Attributes<a class="headerlink" href="Attributes.html#attributes" title="Permalink to this headline">¶</a></h1>
+<p><em>Attributes</em> provide more information about a declaration or type. There are two kinds of attributes in Swift, those that apply to declarations and those that apply to types.</p>
+<p>You specify an attribute by writing the <code class="docutils literal"><span class="pre">&#64;</span></code> symbol followed by the attribute’s name and any arguments that the attribute accepts:</p>
+<div class="syntax-outline highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li>@<span class="gi">attribute name</span>
+</li><li>@<span class="gi">attribute name</span>(<span class="gi">attribute arguments</span>)
+</li></ol></pre></div></div>
+<p>Some declaration attributes accept arguments that specify more information about the attribute and how it applies to a particular declaration. These <em>attribute arguments</em> are enclosed in parentheses, and their format is defined by the attribute they belong to.</p>
+<div class="section" id="ID348">
+<h2>Declaration Attributes<a class="headerlink" href="Attributes.html#ID348" title="Permalink to this headline">¶</a></h2>
+<p>You can apply a declaration attribute to declarations only.</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">available</span></code></dt>
+<dd><p class="first">Apply this attribute to indicate a declaration’s lifecycle relative to certain Swift language versions or certain platforms and operating system versions.</p>
+<p>The <code class="docutils literal"><span class="pre">available</span></code> attribute always appears with a list of two or more comma-separated attribute arguments. These arguments begin with one of the following platform or language names:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">iOS</span></code></li>
+<li><code class="docutils literal"><span class="pre">iOSApplicationExtension</span></code></li>
+<li><code class="docutils literal"><span class="pre">macOS</span></code></li>
+<li><code class="docutils literal"><span class="pre">macOSApplicationExtension</span></code></li>
+<li><code class="docutils literal"><span class="pre">watchOS</span></code></li>
+<li><code class="docutils literal"><span class="pre">watchOSApplicationExtension</span></code></li>
+<li><code class="docutils literal"><span class="pre">tvOS</span></code></li>
+<li><code class="docutils literal"><span class="pre">tvOSApplicationExtension</span></code></li>
+<li><code class="docutils literal"><span class="pre">swift</span></code></li>
+</ul>
+<p>You can also use an asterisk (<code class="docutils literal"><span class="pre">*</span></code>) to indicate the availability of the declaration on all of the platform names listed above. An <code class="docutils literal"><span class="pre">available</span></code> attribute specifying a Swift version availability can’t use the asterisk.</p>
+<p>The remaining arguments can appear in any order and specify additional information about the declaration’s lifecycle, including important milestones.</p>
+<ul>
+<li><p class="first">The <code class="docutils literal"><span class="pre">unavailable</span></code> argument indicates that the declaration isn’t available on the specified platform. This argument can’t be used when specifying Swift version availability.</p>
+</li>
+<li><p class="first">The <code class="docutils literal"><span class="pre">introduced</span></code> argument indicates the first version of the specified platform or language in which the declaration was introduced. It has the following form:</p>
+<div class="syntax-outline highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="nv">introduced</span>: <span class="gi">version number</span>
+</li></ol></pre></div></div>
+<p>The <em>version number</em> consists of one to three positive integers, separated by periods.</p>
+</li>
+<li><p class="first">The <code class="docutils literal"><span class="pre">deprecated</span></code> argument indicates the first version of the specified platform or language in which the declaration was deprecated. It has the following form:</p>
+<div class="syntax-outline highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="nv">deprecated</span>: <span class="gi">version number</span>
+</li></ol></pre></div></div>
+<p>The optional <em>version number</em> consists of one to three positive integers, separated by periods. Omitting the version number indicates that the declaration is currently deprecated, without giving any information about when the deprecation occurred. If you omit the version number, omit the colon (<code class="docutils literal"><span class="pre">:</span></code>) as well.</p>
+</li>
+<li><p class="first">The <code class="docutils literal"><span class="pre">obsoleted</span></code> argument indicates the first version of the specified platform or language in which the declaration was obsoleted. When a declaration is obsoleted, it’s removed from the specified platform or language and can no longer be used. It has the following form:</p>
+<div class="syntax-outline highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="nv">obsoleted</span>: <span class="gi">version number</span>
+</li></ol></pre></div></div>
+<p>The <em>version number</em> consists of one to three positive integers, separated by periods.</p>
+</li>
+<li><p class="first">The <code class="docutils literal"><span class="pre">message</span></code> argument is used to provide a textual message that’s displayed by the compiler when emitting a warning or error about the use of a deprecated or obsoleted declaration. It has the following form:</p>
+<div class="syntax-outline highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="nv">message</span>: <span class="gi">message</span>
+</li></ol></pre></div></div>
+<p>The <em>message</em> consists of a string literal.</p>
+</li>
+<li><p class="first">The <code class="docutils literal"><span class="pre">renamed</span></code> argument is used to provide a textual message that indicates the new name for a declaration that’s been renamed. The new name is displayed by the compiler when emitting an error about the use of a renamed declaration. It has the following form:</p>
+<div class="syntax-outline highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="nv">renamed</span>: <span class="gi">new name</span>
+</li></ol></pre></div></div>
+<p>The <em>new name</em> consists of a string literal.</p>
+<p>You can use the <code class="docutils literal"><span class="pre">renamed</span></code> argument in conjunction with the <code class="docutils literal"><span class="pre">unavailable</span></code> argument and a type alias declaration to indicate to clients of your code that a declaration has been renamed. For example, this is useful when the name of a declaration is changed between releases of a framework or library.</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="c">// First release</span>
+</li><li><span class="k">protocol</span> <span class="nv">MyProtocol</span> {
+</li><li>    <span class="c">// protocol definition</span>
+</li><li>}
+</li></ol></pre></div></div>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="c">// Subsequent release renames MyProtocol</span>
+</li><li><span class="k">protocol</span> <span class="nv">MyRenamedProtocol</span> {
+</li><li>    <span class="c">// protocol definition</span>
+</li><li>}
+</li><li>
+</li><li><span class="k">@available</span>(*, <span class="nv">unavailable</span>, <span class="nv">renamed</span>: <span class="s">&quot;MyRenamedProtocol&quot;</span>)
+</li><li><span class="k">typealias</span> <span class="nv">MyProtocol</span> = <span class="nc">MyRenamedProtocol</span>
+</li></ol></pre></div></div>
+</li>
+</ul>
+<p>You can apply multiple <code class="docutils literal"><span class="pre">available</span></code> attributes on a single declaration to specify the declaration’s availability on different platforms and different versions of Swift. The declaration that the <code class="docutils literal"><span class="pre">available</span></code> attribute applies to is ignored if the attribute specifies a platform or language version that doesn’t match the current target. If you use multiple <code class="docutils literal"><span class="pre">available</span></code> attributes the effective availability is the combination of the platform and Swift availabilities.</p>
+<p>If an <code class="docutils literal"><span class="pre">available</span></code> attribute only specifies an <code class="docutils literal"><span class="pre">introduced</span></code> argument in addition to a platform or language name argument, the following shorthand syntax can be used instead:</p>
+<div class="syntax-outline highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">@available</span>(<span class="gi">platform name</span> <span class="gi">version number</span>, *)
+</li><li><span class="k">@available</span>(<span class="nv">swift</span> <span class="gi">version number</span>)
+</li></ol></pre></div></div>
+<p>The shorthand syntax for <code class="docutils literal"><span class="pre">available</span></code> attributes allows for availability for multiple platforms to be expressed concisely. Although the two forms are functionally equivalent, the shorthand form is preferred whenever possible.</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">@available</span>(<span class="k">iOS</span> <span class="m">10.0</span>, <span class="k">macOS</span> <span class="m">10.12</span>, *)
+</li><li><span class="k">class</span> <span class="nv">MyClass</span> {
+</li><li>    <span class="c">// class definition</span>
+</li><li>}
+</li></ol></pre></div></div>
+<p>An <code class="docutils literal"><span class="pre">available</span></code> attribute specifying a Swift version availability can’t additionally specify a declaration’s platform availability. Instead, use separate <code class="docutils literal"><span class="pre">available</span></code> attributes to specify a Swift version availability and one or more platform availabilities.</p>
+<div class="last highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">@available</span>(<span class="nv">swift</span> <span class="m">3.0</span>.<span class="m">2</span>)
+</li><li><span class="k">@available</span>(<span class="k">macOS</span> <span class="m">10.12</span>, *)
+</li><li><span class="k">struct</span> <span class="nv">MyStruct</span> {
+</li><li>    <span class="c">// struct definition</span>
+</li><li>}
+</li></ol></pre></div></div>
+</dd>
+<dt><code class="docutils literal"><span class="pre">discardableResult</span></code></dt>
+<dd>Apply this attribute to a function or method declaration to suppress the compiler warning when the function or method that returns a value is called without using its result.</dd>
+<dt><code class="docutils literal"><span class="pre">dynamicMemberLookup</span></code></dt>
+<dd><p class="first">Apply this attribute to a class, structure, enumeration, or protocol to enable members to be looked up by name at runtime. The type must implement a <code class="docutils literal"><span class="pre">subscript(dynamicMemberLookup:)</span></code> subscript.</p>
+<p>In an explicit member expression, if there isn’t a corresponding declaration for the named member, the expression is understood as a call to the type’s <code class="docutils literal"><span class="pre">subscript(dynamicMemberLookup:)</span></code> subscript, passing a string literal that contains the member’s name as the argument. The subscript’s parameter type can be any type that conforms to the <code class="docutils literal"><span class="pre">ExpressibleByStringLiteral</span></code> protocol, and its return type can be any type. In most cases, the subscript’s parameter is a <code class="docutils literal"><span class="pre">String</span></code> value. For example:</p>
+<div class="last highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">@dynamicMemberLookup</span>
+</li><li><span class="k">struct</span> <span class="nv">DynamicStruct</span> {
+</li><li>    <span class="k">let</span> <span class="nv">dictionary</span> = [<span class="s">&quot;someDynamicMember&quot;</span>: <span class="m">325</span>,
+</li><li>                      <span class="s">&quot;someOtherMember&quot;</span>: <span class="m">787</span>]
+</li><li>    <span class="k">subscript</span>(<span class="nv">dynamicMember</span> <span class="nv">member</span>: <span class="nc">String</span>) -&gt; <span class="nc">Int</span> {
+</li><li>        <span class="k">return</span> <span class="nv">dictionary</span>[<span class="nv">member</span>] ?? <span class="m">1054</span>
+</li><li>    }
+</li><li>}
+</li><li><span class="k">let</span> <span class="nv">s</span> = <span class="nv">DynamicStruct</span>()
+</li><li>
+</li><li><span class="c">// Using dynamic member lookup</span>
+</li><li><span class="k">let</span> <span class="nv">dynamic</span> = <span class="nv">s</span>.<span class="nv">someDynamicMember</span>
+</li><li><span class="nv">print</span>(<span class="nv">dynamic</span>)
+</li><li><span class="c">// Prints &quot;325&quot;</span>
+</li><li>
+</li><li><span class="c">// Calling the underlying subscript directly</span>
+</li><li><span class="k">let</span> <span class="nv">equivalent</span> = <span class="nv">s</span>[<span class="nv">dynamicMember</span>: <span class="s">&quot;someDynamicMember&quot;</span>]
+</li><li><span class="nv">print</span>(<span class="nv">dynamic</span> == <span class="nv">equivalent</span>)
+</li><li><span class="c">// Prints &quot;true&quot;</span>
+</li></ol></pre></div></div>
+</dd>
+<dt><code class="docutils literal"><span class="pre">GKInspectable</span></code></dt>
+<dd>Apply this attribute to expose a custom GameplayKit component property to the SpriteKit editor UI. Applying this attribute also implies the <code class="docutils literal"><span class="pre">objc</span></code> attribute.</dd>
+<dt><code class="docutils literal"><span class="pre">inlinable</span></code></dt>
+<dd><p class="first">Apply this attribute to a function, method, computed property, subscript, convenience initializer, or deinitializer declaration to expose that declaration’s implementation as part of the module’s public interface. The compiler is allowed to replace calls to an inlinable symbol with a copy of the symbol’s implementation at the call site.</p>
+<p class="last">This attribute can’t be applied to declarations that are nested inside functions or to <code class="docutils literal"><span class="pre">fileprivate</span></code> or <code class="docutils literal"><span class="pre">private</span></code> declarations. Functions and closures that are defined inside an inlinable function are implicitly inlinable, even though they can’t be marked with this attribute.</p>
+</dd>
+<dt><code class="docutils literal"><span class="pre">nonobjc</span></code></dt>
+<dd><p class="first">Apply this attribute to a method, property, subscript, or initializer declaration to suppress an implicit <code class="docutils literal"><span class="pre">objc</span></code> attribute. The <code class="docutils literal"><span class="pre">nonobjc</span></code> attribute tells the compiler to make the declaration unavailable in Objective-C code, even though it’s possible to represent it in Objective-C.</p>
+<p>Applying this attribute to an extension has the same effect as applying it to every member of that extension that isn’t explicitly marked with the <code class="docutils literal"><span class="pre">objc</span></code> attribute.</p>
+<p>You use the <code class="docutils literal"><span class="pre">nonobjc</span></code> attribute to resolve circularity for bridging methods in a class marked with the <code class="docutils literal"><span class="pre">objc</span></code> attribute, and to allow overloading of methods and initializers in a class marked with the <code class="docutils literal"><span class="pre">objc</span></code> attribute.</p>
+<p class="last">A method marked with the <code class="docutils literal"><span class="pre">nonobjc</span></code> attribute can’t override a method marked with the <code class="docutils literal"><span class="pre">objc</span></code> attribute. However, a method marked with the <code class="docutils literal"><span class="pre">objc</span></code> attribute can override a method marked with the <code class="docutils literal"><span class="pre">nonobjc</span></code> attribute. Similarly, a method marked with the <code class="docutils literal"><span class="pre">nonobjc</span></code> attribute can’t satisfy a protocol requirement for a method marked with the <code class="docutils literal"><span class="pre">objc</span></code> attribute.</p>
+</dd>
+<dt><code class="docutils literal"><span class="pre">NSApplicationMain</span></code></dt>
+<dd><p class="first">Apply this attribute to a class to indicate that it’s the application delegate. Using this attribute is equivalent to calling the <code class="docutils literal"><span class="pre">NSApplicationMain(_:_:)</span></code> function.</p>
+<p>If you don’t use this attribute, supply a <code class="docutils literal"><span class="pre">main.swift</span></code> file with code at the top level that calls the <code class="docutils literal"><span class="pre">NSApplicationMain(_:_:)</span></code> function as follows:</p>
+<div class="last highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">import</span> <span class="nv">AppKit</span>
+</li><li><span class="nv">NSApplicationMain</span>(<span class="nv">CommandLine</span>.<span class="nv">argc</span>, <span class="nv">CommandLine</span>.<span class="nv">unsafeArgv</span>)
+</li></ol></pre></div></div>
+</dd>
+<dt><code class="docutils literal"><span class="pre">NSCopying</span></code></dt>
+<dd><p class="first">Apply this attribute to a stored variable property of a class. This attribute causes the property’s setter to be synthesized with a <em>copy</em> of the property’s value—returned by the <code class="docutils literal"><span class="pre">copyWithZone(_:)</span></code> method—instead of the value of the property itself. The type of the property must conform to the <code class="docutils literal"><span class="pre">NSCopying</span></code> protocol.</p>
+<p class="last">The <code class="docutils literal"><span class="pre">NSCopying</span></code> attribute behaves in a way similar to the Objective-C <code class="docutils literal"><span class="pre">copy</span></code> property attribute.</p>
+</dd>
+<dt><code class="docutils literal"><span class="pre">NSManaged</span></code></dt>
+<dd>Apply this attribute to an instance method or stored variable property of a class that inherits from <code class="docutils literal"><span class="pre">NSManagedObject</span></code> to indicate that Core Data dynamically provides its implementation at runtime, based on the associated entity description. For a property marked with the <code class="docutils literal"><span class="pre">NSManaged</span></code> attribute, Core Data also provides the storage at runtime. Applying this attribute also implies the <code class="docutils literal"><span class="pre">objc</span></code> attribute.</dd>
+<dt><code class="docutils literal"><span class="pre">objc</span></code></dt>
+<dd><p class="first">Apply this attribute to any declaration that can be represented in Objective-C—for example, nonnested classes, protocols, nongeneric enumerations (constrained to integer raw-value types), properties and methods (including getters and setters) of classes, protocols and optional members of a protocol, initializers, and subscripts. The <code class="docutils literal"><span class="pre">objc</span></code> attribute tells the compiler that a declaration is available to use in Objective-C code.</p>
+<p>Applying this attribute to an extension has the same effect as applying it to every member of that extension that isn’t explicitly marked with the <code class="docutils literal"><span class="pre">nonobjc</span></code> attribute.</p>
+<p>The compiler implicitly adds the <code class="docutils literal"><span class="pre">objc</span></code> attribute to subclasses of any class defined in Objective-C. However, the subclass must not be generic, and must not inherit from any generic classes. You can explicitly add the <code class="docutils literal"><span class="pre">objc</span></code> attribute to a subclass that meets these criteria, to specify its Objective-C name as discussed below. Protocols that are marked with the <code class="docutils literal"><span class="pre">objc</span></code> attribute can’t inherit from protocols that aren’t marked with this attribute.</p>
+<p>The <code class="docutils literal"><span class="pre">objc</span></code> attribute is also implicitly added in the following cases:</p>
+<ul class="simple">
+<li>The declaration is an override in a subclass, and the superclass’s declaration has the <code class="docutils literal"><span class="pre">objc</span></code> attribute.</li>
+<li>The declaration satisfies a requirement from a protocol that has the <code class="docutils literal"><span class="pre">objc</span></code> attribute.</li>
+<li>The declaration has the <code class="docutils literal"><span class="pre">IBAction</span></code>, <code class="docutils literal"><span class="pre">IBOutlet</span></code>, <code class="docutils literal"><span class="pre">IBDesignable</span></code>, <code class="docutils literal"><span class="pre">IBInspectable</span></code>, <code class="docutils literal"><span class="pre">NSManaged</span></code>, or <code class="docutils literal"><span class="pre">GKInspectable</span></code> attribute.</li>
+</ul>
+<p>If you apply the <code class="docutils literal"><span class="pre">objc</span></code> attribute to an enumeration, each enumeration case is exposed to Objective-C code as the concatenation of the enumeration name and the case name. The first letter of the case name is capitalized. For example, a case named <code class="docutils literal"><span class="pre">venus</span></code> in a Swift <code class="docutils literal"><span class="pre">Planet</span></code> enumeration is exposed to Objective-C code as a case named <code class="docutils literal"><span class="pre">PlanetVenus</span></code>.</p>
+<p>The <code class="docutils literal"><span class="pre">objc</span></code> attribute optionally accepts a single attribute argument, which consists of an identifier. The identifier specifies the name to be exposed to Objective-C for the entity that the <code class="docutils literal"><span class="pre">objc</span></code> attribute applies to. You can use this argument to name classes, enumerations, enumeration cases, protocols, methods, getters, setters, and initializers. If you specify the Objective-C name for a class, protocol, or enumeration, include a three-letter prefix on the name, as described in <a class="reference external" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Conventions/Conventions.html#//apple_ref/doc/uid/TP40011210-CH10-SW1">Conventions</a> in <a class="reference external" href="https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html#//apple_ref/doc/uid/TP40011210">Programming with Objective-C</a>. The example below exposes the getter for the <code class="docutils literal"><span class="pre">enabled</span></code> property of the <code class="docutils literal"><span class="pre">ExampleClass</span></code> to Objective-C code as <code class="docutils literal"><span class="pre">isEnabled</span></code> rather than just as the name of the property itself.</p>
+<div class="last highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">ExampleClass</span>: <span class="nc">NSObject</span> {
+</li><li>    <span class="k">@objc</span> <span class="k">var</span> <span class="nv">enabled</span>: <span class="nc">Bool</span> {
+</li><li>        <span class="k">@objc(isEnabled)</span> <span class="k">get</span> {
+</li><li>            <span class="c">// Return the appropriate value</span>
+</li><li>        }
+</li><li>    }
+</li><li>}
+</li></ol></pre></div></div>
+</dd>
+<dt><code class="docutils literal"><span class="pre">objcMembers</span></code></dt>
+<dd><p class="first">Apply this attribute to any class declaration that can have the <code class="docutils literal"><span class="pre">objc</span></code> attribute. The <code class="docutils literal"><span class="pre">objc</span></code> attribute is implicitly added to Objective-C compatible members of the class, its extensions, its subclasses, and all of the extensions of its subclasses.</p>
+<p class="last">Most code should use the <code class="docutils literal"><span class="pre">objc</span></code> attribute instead, to expose only the declarations that are needed. If you need to expose many declarations, you can group them in an extension that has the <code class="docutils literal"><span class="pre">objc</span></code> attribute. The <code class="docutils literal"><span class="pre">objcMembers</span></code> attribute is a convenience for libraries that make heavy use of the introspection facilities of the Objective-C runtime. Applying the <code class="docutils literal"><span class="pre">objc</span></code> attribute when it isn’t needed can increase your binary size and adversely affect performance.</p>
+</dd>
+<dt><code class="docutils literal"><span class="pre">testable</span></code></dt>
+<dd>Apply this attribute to <code class="docutils literal"><span class="pre">import</span></code> declarations for modules compiled with testing enabled to access any entities marked with the <code class="docutils literal"><span class="pre">internal</span></code> access-level modifier as if they were declared with the <code class="docutils literal"><span class="pre">public</span></code> access-level modifier. Tests can also access classes and class members that are marked with the <code class="docutils literal"><span class="pre">internal</span></code> or <code class="docutils literal"><span class="pre">public</span></code> access-level modifier as if they were declared with the <code class="docutils literal"><span class="pre">open</span></code> access-level modifier.</dd>
+<dt><code class="docutils literal"><span class="pre">UIApplicationMain</span></code></dt>
+<dd><p class="first">Apply this attribute to a class to indicate that it’s the application delegate. Using this attribute is equivalent to calling the <code class="docutils literal"><span class="pre">UIApplicationMain</span></code> function and passing this class’s name as the name of the delegate class.</p>
+<p class="last">If you don’t use this attribute, supply a <code class="docutils literal"><span class="pre">main.swift</span></code> file with code at the top level that calls the <a class="reference external" href="https://developer.apple.com/documentation/uikit/1622933-uiapplicationmain"><code class="docutils literal"><span class="pre">UIApplicationMain(_:_:_:_:)</span></code></a> function. For example, if your app uses a custom subclass of <code class="docutils literal"><span class="pre">UIApplication</span></code> as its principal class, call the <code class="docutils literal"><span class="pre">UIApplicationMain(_:_:_:_:)</span></code> function instead of using this attribute.</p>
+</dd>
+<dt><code class="docutils literal"><span class="pre">usableFromInline</span></code></dt>
+<dd><p class="first">Apply this attribute to a function, method, computed property, subscript, initializer, or deinitializer declaration to allow that symbol to be used in inlinable code that’s defined in the same module as the declaration. The declaration must have the <code class="docutils literal"><span class="pre">internal</span></code> access level modifier.</p>
+<p>Like the <code class="docutils literal"><span class="pre">public</span></code> access level modifier, this attribute exposes the declaration as part of the module’s public interface. Unlike <code class="docutils literal"><span class="pre">public</span></code>, the compiler doesn’t allow declarations marked with <code class="docutils literal"><span class="pre">usableFromInline</span></code> to be referenced by name in code outside the module, even though the declaration’s symbol is exported. However, code outside the module might still be able to interact with the declaration’s symbol by using runtime behavior.</p>
+<p class="last">Declarations marked with the <code class="docutils literal"><span class="pre">inlinable</span></code> attribute are implicitly usable from inlinable code. Although either <code class="docutils literal"><span class="pre">inlinable</span></code> or <code class="docutils literal"><span class="pre">usableFromInline</span></code> can be applied to <code class="docutils literal"><span class="pre">internal</span></code> declarations, applying both attributes is an error.</p>
+</dd>
+</dl>
+<div class="section" id="ID349">
+<h3>Declaration Attributes Used by Interface Builder<a class="headerlink" href="Attributes.html#ID349" title="Permalink to this headline">¶</a></h3>
+<p>Interface Builder attributes are declaration attributes used by Interface Builder to synchronize with Xcode. Swift provides the following Interface Builder attributes: <code class="docutils literal"><span class="pre">IBAction</span></code>, <code class="docutils literal"><span class="pre">IBOutlet</span></code>, <code class="docutils literal"><span class="pre">IBDesignable</span></code>, and <code class="docutils literal"><span class="pre">IBInspectable</span></code>. These attributes are conceptually the same as their Objective-C counterparts.</p>
+<p>You apply the <code class="docutils literal"><span class="pre">IBOutlet</span></code> and <code class="docutils literal"><span class="pre">IBInspectable</span></code> attributes to property declarations of a class. You apply the <code class="docutils literal"><span class="pre">IBAction</span></code> attribute to method declarations of a class and the <code class="docutils literal"><span class="pre">IBDesignable</span></code> attribute to class declarations.</p>
+<p>Applying the <code class="docutils literal"><span class="pre">IBAction</span></code>, <code class="docutils literal"><span class="pre">IBOutlet</span></code>, <code class="docutils literal"><span class="pre">IBDesignable</span></code>, or <code class="docutils literal"><span class="pre">IBInspectable</span></code> attribute also implies the <code class="docutils literal"><span class="pre">objc</span></code> attribute.</p>
+</div>
+</div>
+<div class="section" id="ID350">
+<h2>Type Attributes<a class="headerlink" href="Attributes.html#ID350" title="Permalink to this headline">¶</a></h2>
+<p>You can apply type attributes to types only.</p>
+<dl class="docutils">
+<dt><code class="docutils literal"><span class="pre">autoclosure</span></code></dt>
+<dd>This attribute is used to delay the evaluation of an expression by automatically wrapping that expression in a closure with no arguments. Apply this attribute to a parameter’s type in a method or function declaration, for a parameter of a function type that takes no arguments and that returns a value of the type of the expression. For an example of how to use the <code class="docutils literal"><span class="pre">autoclosure</span></code> attribute, see <a class="reference internal" href="../LanguageGuide/Closures.html#ID543"><span class="std std-ref">Autoclosures</span></a> and <a class="reference internal" href="Types.html#ID449"><span class="std std-ref">Function Type</span></a>.</dd>
+<dt><code class="docutils literal"><span class="pre">convention</span></code></dt>
+<dd><p class="first">Apply this attribute to the type of a function to indicate its calling conventions.</p>
+<p>The <code class="docutils literal"><span class="pre">convention</span></code> attribute always appears with one of the attribute arguments below.</p>
+<ul class="simple">
+<li>The <code class="docutils literal"><span class="pre">swift</span></code> argument is used to indicate a Swift function reference. This is the standard calling convention for function values in Swift.</li>
+<li>The <code class="docutils literal"><span class="pre">block</span></code> argument is used to indicate an Objective-C compatible block reference. The function value is represented as a reference to the block object, which is an <code class="docutils literal"><span class="pre">id</span></code>-compatible Objective-C object that embeds its invocation function within the object. The invocation function uses the C calling convention.</li>
+<li>The <code class="docutils literal"><span class="pre">c</span></code> argument is used to indicate a C function reference. The function value carries no context and uses the C calling convention.</li>
+</ul>
+<p class="last">A function with C function calling conventions can be used as a function with Objective-C block calling conventions, and a function with Objective-C block calling conventions can be used as a function with Swift function calling conventions. However, only nongeneric global functions, and local functions or closures that don’t capture any local variables, can be used as a function with C function calling conventions.</p>
+</dd>
+<dt><code class="docutils literal"><span class="pre">escaping</span></code></dt>
+<dd>Apply this attribute to a parameter’s type in a method or function declaration to indicate that the parameter’s value can be stored for later execution. This means that the value is allowed to outlive the lifetime of the call. Function type parameters with the <code class="docutils literal"><span class="pre">escaping</span></code> type attribute require explicit use of <code class="docutils literal"><span class="pre">self.</span></code> for properties or methods. For an example of how to use the <code class="docutils literal"><span class="pre">escaping</span></code> attribute, see <a class="reference internal" href="../LanguageGuide/Closures.html#ID546"><span class="std std-ref">Escaping Closures</span></a>.</dd>
+</dl>
+<div class="admonition grammar"><p class="first admonition-title">Grammar of an attribute</p><div class="syntax-group"><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/attribute"></a>attribute</span><span class="arrow"> → </span> <code>&#64;</code> <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/attribute-name">attribute-name</a></span>  <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/attribute-argument-clause">attribute-argument-clause</a></span> <sub>opt</sub></p><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/attribute-name"></a>attribute-name</span><span class="arrow"> → </span> <span class="syntactic-category"><a href="LexicalStructure.html#//appleref/swift/grammar/identifier">identifier</a></span> </p><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/attribute-argument-clause"></a>attribute-argument-clause</span><span class="arrow"> → </span> <code>(</code> <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/balanced-tokens">balanced-tokens</a></span> <sub>opt</sub> <code>)</code></p><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/attributes"></a>attributes</span><span class="arrow"> → </span> <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/attribute">attribute</a></span>  <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/attributes">attributes</a></span> <sub>opt</sub></p></div><div class="syntax-group"><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/balanced-tokens"></a>balanced-tokens</span><span class="arrow"> → </span> <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/balanced-token">balanced-token</a></span>  <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/balanced-tokens">balanced-tokens</a></span> <sub>opt</sub></p><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/balanced-token"></a>balanced-token</span><span class="arrow"> → </span> <code>(</code> <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/balanced-tokens">balanced-tokens</a></span> <sub>opt</sub> <code>)</code></p><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/balanced-token"></a>balanced-token</span><span class="arrow"> → </span> <code>[</code> <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/balanced-tokens">balanced-tokens</a></span> <sub>opt</sub> <code>]</code></p><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/balanced-token"></a>balanced-token</span><span class="arrow"> → </span> <code>{</code> <span class="syntactic-category"><a href="Attributes.html#//appleref/swift/grammar/balanced-tokens">balanced-tokens</a></span> <sub>opt</sub> <code>}</code></p><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/balanced-token"></a>balanced-token</span><span class="arrow"> → </span> Any identifier, keyword, literal, or operator</p><p class="syntax-def"><span class="syntax-def-name"><a name="//appleref/swift/grammar/balanced-token"></a>balanced-token</span><span class="arrow"> → </span> Any punctuation except  <code>(</code>,  <code>)</code>,  <code>[</code>,  <code>]</code>,  <code>{</code>, or  <code>}</code></p></div></div></div>
+</div>
+
+
+    </article>
+    <div class="next_previous">
+        <p class="previous"><a href="Declarations.html">Declarations</a></p>
+        <p class="next"><a href="Patterns.html">Patterns</a></p>
+    </div>
+
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
+</main>
+
+
+<footer role="contentinfo">
+  <aside>
+    <a href="https://swift.org/atom.xml" title="Subscribe to Site Updates"><i class="feed">Subscribe</i></a>
+    <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
+  </aside>
+
+  <p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved.</p>
+  <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
+  <p class="privacy">
+    <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
+    <a href="https://www.apple.com/legal/privacy/en-ww/cookies/">Cookies</a>
+  </p>
+</footer>
+<div id="jump_to_overlay"></div>
+<script src="../_static/javascripts/application.js"></script>
+  </body>
+</html>

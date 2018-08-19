@@ -1,0 +1,496 @@
+
+
+<!DOCTYPE html>
+
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Apple Inc." />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    
+    <title>Properties &mdash; The Swift Programming Language (Swift 4.2)</title>
+    
+    <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
+    <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
+    <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
+    <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://docs.swift.org/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://docs.swift.org/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://docs.swift.org/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://docs.swift.org/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://docs.swift.org/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.swift.org/apple-touch-icon-180x180.png" />
+    <link rel="mask-icon" href="https://docs.swift.org/assets/images/icon-swift.svg" color="#F05339" /> 
+  </head>
+  <body>
+
+
+<nav role="navigation">
+    <header role="banner">
+      <h1 id="logo">
+        <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
+          Swift.org
+        </a>
+      </h1>
+    </header>
+
+    <div id="menu-toggle" class="menu-toggle open"></div>
+
+    <h2>The Swift Programming Language<div>Swift 4.2</div></h2>
+
+    <ul>
+    <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Welcome to Swift</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="TheBasics.html">Language Guide</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="TheBasics.html">The Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="BasicOperators.html">Basic Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StringsAndCharacters.html">Strings and Characters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CollectionTypes.html">Collection Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ControlFlow.html">Control Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Functions.html">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Closures.html">Closures</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Enumerations.html">Enumerations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ClassesAndStructures.html">Structures and Classes</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="Properties.html#">Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Methods.html">Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Subscripts.html">Subscripts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Inheritance.html">Inheritance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Initialization.html">Initialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Deinitialization.html">Deinitialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="OptionalChaining.html">Optional Chaining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ErrorHandling.html">Error Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="TypeCasting.html">Type Casting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="NestedTypes.html">Nested Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Extensions.html">Extensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Protocols.html">Protocols</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Generics.html">Generics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AutomaticReferenceCounting.html">Automatic Reference Counting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MemorySafety.html">Memory Safety</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AccessControl.html">Access Control</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AdvancedOperators.html">Advanced Operators</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+</ul>
+
+    <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">← Return to Swift.org</a></li>
+    </ul>
+</nav>
+
+
+
+
+<main role="main">
+    <article class="page">
+        <menu id="bashful" type="toolbar">
+          <div class="inner">
+            <menuitem id="jump_to" class="menu-bar-item closed">
+            <span id="jump_to_toggle">On This Page</span>
+            <div class="chevron">
+                <div class="chevy chevron-left"></div>
+                <div class="chevy chevron-right"></div>
+            </div>
+            <menu type="list" class="details">
+                <ul>
+<li><a class="reference internal" href="Properties.html#">Properties</a><ul>
+<li><a class="reference internal" href="Properties.html#ID255">Stored Properties</a><ul>
+<li><a class="reference internal" href="Properties.html#ID256">Stored Properties of Constant Structure Instances</a></li>
+<li><a class="reference internal" href="Properties.html#ID257">Lazy Stored Properties</a></li>
+<li><a class="reference internal" href="Properties.html#ID258">Stored Properties and Instance Variables</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="Properties.html#ID259">Computed Properties</a><ul>
+<li><a class="reference internal" href="Properties.html#ID260">Shorthand Setter Declaration</a></li>
+<li><a class="reference internal" href="Properties.html#ID261">Read-Only Computed Properties</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="Properties.html#ID262">Property Observers</a></li>
+<li><a class="reference internal" href="Properties.html#ID263">Global and Local Variables</a></li>
+<li><a class="reference internal" href="Properties.html#ID264">Type Properties</a><ul>
+<li><a class="reference internal" href="Properties.html#ID265">Type Property Syntax</a></li>
+<li><a class="reference internal" href="Properties.html#ID266">Querying and Setting Type Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </menu>
+            </menuitem>
+          </div>
+        </menu>
+
+        
+  <div class="section" id="properties">
+<h1>Properties<a class="headerlink" href="Properties.html#properties" title="Permalink to this headline">¶</a></h1>
+<p><em>Properties</em> associate values with a particular class, structure, or enumeration. Stored properties store constant and variable values as part of an instance, whereas computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and enumerations. Stored properties are provided only by classes and structures.</p>
+<p>Stored and computed properties are usually associated with instances of a particular type. However, properties can also be associated with the type itself. Such properties are known as type properties.</p>
+<p>In addition, you can define property observers to monitor changes in a property’s value, which you can respond to with custom actions. Property observers can be added to stored properties you define yourself, and also to properties that a subclass inherits from its superclass.</p>
+<div class="section" id="ID255">
+<h2>Stored Properties<a class="headerlink" href="Properties.html#ID255" title="Permalink to this headline">¶</a></h2>
+<p>In its simplest form, a stored property is a constant or variable that is stored as part of an instance of a particular class or structure. Stored properties can be either <em>variable stored properties</em> (introduced by the <code class="docutils literal"><span class="pre">var</span></code> keyword) or <em>constant stored properties</em> (introduced by the <code class="docutils literal"><span class="pre">let</span></code> keyword).</p>
+<p>You can provide a default value for a stored property as part of its definition, as described in <a class="reference internal" href="Initialization.html#ID206"><span class="std std-ref">Default Property Values</span></a>. You can also set and modify the initial value for a stored property during initialization. This is true even for constant stored properties, as described in <a class="reference internal" href="Initialization.html#ID212"><span class="std std-ref">Assigning Constant Properties During Initialization</span></a>.</p>
+<p>The example below defines a structure called <code class="docutils literal"><span class="pre">FixedLengthRange</span></code>, which describes a range of integers whose range length cannot be changed after it is created:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">FixedLengthRange</span> {
+</li><li>    <span class="k">var</span> <span class="nv">firstValue</span>: <span class="nc">Int</span>
+</li><li>    <span class="k">let</span> <span class="nv">length</span>: <span class="nc">Int</span>
+</li><li>}
+</li><li><span class="k">var</span> <span class="nv">rangeOfThreeItems</span> = <span class="nv">FixedLengthRange</span>(<span class="nv">firstValue</span>: <span class="m">0</span>, <span class="nv">length</span>: <span class="m">3</span>)
+</li><li><span class="c">// the range represents integer values 0, 1, and 2</span>
+</li><li><span class="nv">rangeOfThreeItems</span>.<span class="nv">firstValue</span> = <span class="m">6</span>
+</li><li><span class="c">// the range now represents integer values 6, 7, and 8</span>
+</li></ol></pre></div></div>
+<p>Instances of <code class="docutils literal"><span class="pre">FixedLengthRange</span></code> have a variable stored property called <code class="docutils literal"><span class="pre">firstValue</span></code> and a constant stored property called <code class="docutils literal"><span class="pre">length</span></code>. In the example above, <code class="docutils literal"><span class="pre">length</span></code> is initialized when the new range is created and cannot be changed thereafter, because it is a constant property.</p>
+<div class="section" id="ID256">
+<h3>Stored Properties of Constant Structure Instances<a class="headerlink" href="Properties.html#ID256" title="Permalink to this headline">¶</a></h3>
+<p>If you create an instance of a structure and assign that instance to a constant, you cannot modify the instance’s properties, even if they were declared as variable properties:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">let</span> <span class="nv">rangeOfFourItems</span> = <span class="nv">FixedLengthRange</span>(<span class="nv">firstValue</span>: <span class="m">0</span>, <span class="nv">length</span>: <span class="m">4</span>)
+</li><li><span class="c">// this range represents integer values 0, 1, 2, and 3</span>
+</li><li><span class="nv">rangeOfFourItems</span>.<span class="nv">firstValue</span> = <span class="m">6</span>
+</li><li><span class="c">// this will report an error, even though firstValue is a variable property</span>
+</li></ol></pre></div></div>
+<p>Because <code class="docutils literal"><span class="pre">rangeOfFourItems</span></code> is declared as a constant (with the <code class="docutils literal"><span class="pre">let</span></code> keyword), it is not possible to change its <code class="docutils literal"><span class="pre">firstValue</span></code> property, even though <code class="docutils literal"><span class="pre">firstValue</span></code> is a variable property.</p>
+<p>This behavior is due to structures being <em>value types</em>. When an instance of a value type is marked as a constant, so are all of its properties.</p>
+<p>The same is not true for classes, which are <em>reference types</em>. If you assign an instance of a reference type to a constant, you can still change that instance’s variable properties.</p>
+</div>
+<div class="section" id="ID257">
+<h3>Lazy Stored Properties<a class="headerlink" href="Properties.html#ID257" title="Permalink to this headline">¶</a></h3>
+<p>A <em>lazy stored property</em> is a property whose initial value is not calculated until the first time it is used. You indicate a lazy stored property by writing the <code class="docutils literal"><span class="pre">lazy</span></code> modifier before its declaration.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must always declare a lazy property as a variable (with the <code class="docutils literal"><span class="pre">var</span></code> keyword), because its initial value might not be retrieved until after instance initialization completes. Constant properties must always have a value <em>before</em> initialization completes, and therefore cannot be declared as lazy.</p>
+</div>
+<p>Lazy properties are useful when the initial value for a property is dependent on outside factors whose values are not known until after an instance’s initialization is complete. Lazy properties are also useful when the initial value for a property requires complex or computationally expensive setup that should not be performed unless or until it is needed.</p>
+<p>The example below uses a lazy stored property to avoid unnecessary initialization of a complex class. This example defines two classes called <code class="docutils literal"><span class="pre">DataImporter</span></code> and <code class="docutils literal"><span class="pre">DataManager</span></code>, neither of which is shown in full:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">DataImporter</span> {
+</li><li>    <span class="c">/*</span>
+</li><li><span class="c">    DataImporter is a class to import data from an external file.</span>
+</li><li><span class="c">    The class is assumed to take a nontrivial amount of time to initialize.</span>
+</li><li><span class="c">    */</span>
+</li><li>    <span class="k">var</span> <span class="nv">filename</span> = <span class="s">&quot;data.txt&quot;</span>
+</li><li>    <span class="c">// the DataImporter class would provide data importing functionality here</span>
+</li><li>}
+</li><li>
+</li><li><span class="k">class</span> <span class="nv">DataManager</span> {
+</li><li>    <span class="k">lazy</span> <span class="k">var</span> <span class="nv">importer</span> = <span class="nv">DataImporter</span>()
+</li><li>    <span class="k">var</span> <span class="nv">data</span> = [<span class="nv">String</span>]()
+</li><li>    <span class="c">// the DataManager class would provide data management functionality here</span>
+</li><li>}
+</li><li>
+</li><li><span class="k">let</span> <span class="nv">manager</span> = <span class="nv">DataManager</span>()
+</li><li><span class="nv">manager</span>.<span class="nv">data</span>.<span class="nv">append</span>(<span class="s">&quot;Some data&quot;</span>)
+</li><li><span class="nv">manager</span>.<span class="nv">data</span>.<span class="nv">append</span>(<span class="s">&quot;Some more data&quot;</span>)
+</li><li><span class="c">// the DataImporter instance for the importer property has not yet been created</span>
+</li></ol></pre></div></div>
+<p>The <code class="docutils literal"><span class="pre">DataManager</span></code> class has a stored property called <code class="docutils literal"><span class="pre">data</span></code>, which is initialized with a new, empty array of <code class="docutils literal"><span class="pre">String</span></code> values. Although the rest of its functionality is not shown, the purpose of this <code class="docutils literal"><span class="pre">DataManager</span></code> class is to manage and provide access to this array of <code class="docutils literal"><span class="pre">String</span></code> data.</p>
+<p>Part of the functionality of the <code class="docutils literal"><span class="pre">DataManager</span></code> class is the ability to import data from a file. This functionality is provided by the <code class="docutils literal"><span class="pre">DataImporter</span></code> class, which is assumed to take a nontrivial amount of time to initialize. This might be because a <code class="docutils literal"><span class="pre">DataImporter</span></code> instance needs to open a file and read its contents into memory when the <code class="docutils literal"><span class="pre">DataImporter</span></code> instance is initialized.</p>
+<p>It is possible for a <code class="docutils literal"><span class="pre">DataManager</span></code> instance to manage its data without ever importing data from a file, so there is no need to create a new <code class="docutils literal"><span class="pre">DataImporter</span></code> instance when the <code class="docutils literal"><span class="pre">DataManager</span></code> itself is created. Instead, it makes more sense to create the <code class="docutils literal"><span class="pre">DataImporter</span></code> instance if and when it is first used.</p>
+<p>Because it is marked with the <code class="docutils literal"><span class="pre">lazy</span></code> modifier, the <code class="docutils literal"><span class="pre">DataImporter</span></code> instance for the <code class="docutils literal"><span class="pre">importer</span></code> property is only created when the <code class="docutils literal"><span class="pre">importer</span></code> property is first accessed, such as when its <code class="docutils literal"><span class="pre">filename</span></code> property is queried:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="nv">manager</span>.<span class="nv">importer</span>.<span class="nv">filename</span>)
+</li><li><span class="c">// the DataImporter instance for the importer property has now been created</span>
+</li><li><span class="c">// Prints &quot;data.txt&quot;</span>
+</li></ol></pre></div></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If a property marked with the <code class="docutils literal"><span class="pre">lazy</span></code> modifier is accessed by multiple threads simultaneously and the property has not yet been initialized, there is no guarantee that the property will be initialized only once.</p>
+</div>
+</div>
+<div class="section" id="ID258">
+<h3>Stored Properties and Instance Variables<a class="headerlink" href="Properties.html#ID258" title="Permalink to this headline">¶</a></h3>
+<p>If you have experience with Objective-C, you may know that it provides <em>two</em> ways to store values and references as part of a class instance. In addition to properties, you can use instance variables as a backing store for the values stored in a property.</p>
+<p>Swift unifies these concepts into a single property declaration. A Swift property does not have a corresponding instance variable, and the backing store for a property is not accessed directly. This approach avoids confusion about how the value is accessed in different contexts and simplifies the property’s declaration into a single, definitive statement. All information about the property—including its name, type, and memory management characteristics—is defined in a single location as part of the type’s definition.</p>
+</div>
+</div>
+<div class="section" id="ID259">
+<h2>Computed Properties<a class="headerlink" href="Properties.html#ID259" title="Permalink to this headline">¶</a></h2>
+<p>In addition to stored properties, classes, structures, and enumerations can define <em>computed properties</em>, which do not actually store a value. Instead, they provide a getter and an optional setter to retrieve and set other properties and values indirectly.</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Point</span> {
+</li><li>    <span class="k">var</span> <span class="nv">x</span> = <span class="m">0.0</span>, <span class="nv">y</span> = <span class="m">0.0</span>
+</li><li>}
+</li><li><span class="k">struct</span> <span class="nv">Size</span> {
+</li><li>    <span class="k">var</span> <span class="nv">width</span> = <span class="m">0.0</span>, <span class="nv">height</span> = <span class="m">0.0</span>
+</li><li>}
+</li><li><span class="k">struct</span> <span class="nv">Rect</span> {
+</li><li>    <span class="k">var</span> <span class="nv">origin</span> = <span class="nv">Point</span>()
+</li><li>    <span class="k">var</span> <span class="nv">size</span> = <span class="nv">Size</span>()
+</li><li>    <span class="k">var</span> <span class="nv">center</span>: <span class="nc">Point</span> {
+</li><li>        <span class="k">get</span> {
+</li><li>            <span class="k">let</span> <span class="nv">centerX</span> = <span class="nv">origin</span>.<span class="nv">x</span> + (<span class="nv">size</span>.<span class="nv">width</span> / <span class="m">2</span>)
+</li><li>            <span class="k">let</span> <span class="nv">centerY</span> = <span class="nv">origin</span>.<span class="nv">y</span> + (<span class="nv">size</span>.<span class="nv">height</span> / <span class="m">2</span>)
+</li><li>            <span class="k">return</span> <span class="nv">Point</span>(<span class="nv">x</span>: <span class="nv">centerX</span>, <span class="nv">y</span>: <span class="nv">centerY</span>)
+</li><li>        }
+</li><li>        <span class="k">set</span>(<span class="nv">newCenter</span>) {
+</li><li>            <span class="nv">origin</span>.<span class="nv">x</span> = <span class="nv">newCenter</span>.<span class="nv">x</span> - (<span class="nv">size</span>.<span class="nv">width</span> / <span class="m">2</span>)
+</li><li>            <span class="nv">origin</span>.<span class="nv">y</span> = <span class="nv">newCenter</span>.<span class="nv">y</span> - (<span class="nv">size</span>.<span class="nv">height</span> / <span class="m">2</span>)
+</li><li>        }
+</li><li>    }
+</li><li>}
+</li><li><span class="k">var</span> <span class="nv">square</span> = <span class="nv">Rect</span>(<span class="nv">origin</span>: <span class="nv">Point</span>(<span class="nv">x</span>: <span class="m">0.0</span>, <span class="nv">y</span>: <span class="m">0.0</span>),
+</li><li>                  <span class="nv">size</span>: <span class="nv">Size</span>(<span class="nv">width</span>: <span class="m">10.0</span>, <span class="nv">height</span>: <span class="m">10.0</span>))
+</li><li><span class="k">let</span> <span class="nv">initialSquareCenter</span> = <span class="nv">square</span>.<span class="nv">center</span>
+</li><li><span class="nv">square</span>.<span class="nv">center</span> = <span class="nv">Point</span>(<span class="nv">x</span>: <span class="m">15.0</span>, <span class="nv">y</span>: <span class="m">15.0</span>)
+</li><li><span class="nv">print</span>(<span class="s">&quot;square.origin is now at (</span>\<span class="p">(</span><span class="nv">square</span>.<span class="nv">origin</span>.<span class="nv">x</span><span class="p">)</span><span class="s">, </span>\<span class="p">(</span><span class="nv">square</span>.<span class="nv">origin</span>.<span class="nv">y</span><span class="p">)</span><span class="s">)&quot;</span>)
+</li><li><span class="c">// Prints &quot;square.origin is now at (10.0, 10.0)&quot;</span>
+</li></ol></pre></div></div>
+<p>This example defines three structures for working with geometric shapes:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">Point</span></code> encapsulates the x- and y-coordinate of a point.</li>
+<li><code class="docutils literal"><span class="pre">Size</span></code> encapsulates a <code class="docutils literal"><span class="pre">width</span></code> and a <code class="docutils literal"><span class="pre">height</span></code>.</li>
+<li><code class="docutils literal"><span class="pre">Rect</span></code> defines a rectangle by an origin point and a size.</li>
+</ul>
+<p>The <code class="docutils literal"><span class="pre">Rect</span></code> structure also provides a computed property called <code class="docutils literal"><span class="pre">center</span></code>. The current center position of a <code class="docutils literal"><span class="pre">Rect</span></code> can always be determined from its <code class="docutils literal"><span class="pre">origin</span></code> and <code class="docutils literal"><span class="pre">size</span></code>, and so you don’t need to store the center point as an explicit <code class="docutils literal"><span class="pre">Point</span></code> value. Instead, <code class="docutils literal"><span class="pre">Rect</span></code> defines a custom getter and setter for a computed variable called <code class="docutils literal"><span class="pre">center</span></code>, to enable you to work with the rectangle’s <code class="docutils literal"><span class="pre">center</span></code> as if it were a real stored property.</p>
+<p>The example above creates a new <code class="docutils literal"><span class="pre">Rect</span></code> variable called <code class="docutils literal"><span class="pre">square</span></code>. The <code class="docutils literal"><span class="pre">square</span></code> variable is initialized with an origin point of <code class="docutils literal"><span class="pre">(0,</span> <span class="pre">0)</span></code>, and a width and height of <code class="docutils literal"><span class="pre">10</span></code>. This square is represented by the blue square in the diagram below.</p>
+<p>The <code class="docutils literal"><span class="pre">square</span></code> variable’s <code class="docutils literal"><span class="pre">center</span></code> property is then accessed through dot syntax (<code class="docutils literal"><span class="pre">square.center</span></code>), which causes the getter for <code class="docutils literal"><span class="pre">center</span></code> to be called, to retrieve the current property value. Rather than returning an existing value, the getter actually calculates and returns a new <code class="docutils literal"><span class="pre">Point</span></code> to represent the center of the square. As can be seen above, the getter correctly returns a center point of <code class="docutils literal"><span class="pre">(5,</span> <span class="pre">5)</span></code>.</p>
+<p>The <code class="docutils literal"><span class="pre">center</span></code> property is then set to a new value of <code class="docutils literal"><span class="pre">(15,</span> <span class="pre">15)</span></code>, which moves the square up and to the right, to the new position shown by the orange square in the diagram below. Setting the <code class="docutils literal"><span class="pre">center</span></code> property calls the setter for <code class="docutils literal"><span class="pre">center</span></code>, which modifies the <code class="docutils literal"><span class="pre">x</span></code> and <code class="docutils literal"><span class="pre">y</span></code> values of the stored <code class="docutils literal"><span class="pre">origin</span></code> property, and moves the square to its new position.</p>
+<img alt="../_images/computedProperties_2x.png" class="align-center" src="../_images/computedProperties_2x.png" style="width: 388px;" />
+<div class="section" id="ID260">
+<h3>Shorthand Setter Declaration<a class="headerlink" href="Properties.html#ID260" title="Permalink to this headline">¶</a></h3>
+<p>If a computed property’s setter does not define a name for the new value to be set, a default name of <code class="docutils literal"><span class="pre">newValue</span></code> is used. Here’s an alternative version of the <code class="docutils literal"><span class="pre">Rect</span></code> structure, which takes advantage of this shorthand notation:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">AlternativeRect</span> {
+</li><li>    <span class="k">var</span> <span class="nv">origin</span> = <span class="nv">Point</span>()
+</li><li>    <span class="k">var</span> <span class="nv">size</span> = <span class="nv">Size</span>()
+</li><li>    <span class="k">var</span> <span class="nv">center</span>: <span class="nc">Point</span> {
+</li><li>        <span class="k">get</span> {
+</li><li>            <span class="k">let</span> <span class="nv">centerX</span> = <span class="nv">origin</span>.<span class="nv">x</span> + (<span class="nv">size</span>.<span class="nv">width</span> / <span class="m">2</span>)
+</li><li>            <span class="k">let</span> <span class="nv">centerY</span> = <span class="nv">origin</span>.<span class="nv">y</span> + (<span class="nv">size</span>.<span class="nv">height</span> / <span class="m">2</span>)
+</li><li>            <span class="k">return</span> <span class="nv">Point</span>(<span class="nv">x</span>: <span class="nv">centerX</span>, <span class="nv">y</span>: <span class="nv">centerY</span>)
+</li><li>        }
+</li><li>        <span class="k">set</span> {
+</li><li>            <span class="nv">origin</span>.<span class="nv">x</span> = <span class="nv">newValue</span>.<span class="nv">x</span> - (<span class="nv">size</span>.<span class="nv">width</span> / <span class="m">2</span>)
+</li><li>            <span class="nv">origin</span>.<span class="nv">y</span> = <span class="nv">newValue</span>.<span class="nv">y</span> - (<span class="nv">size</span>.<span class="nv">height</span> / <span class="m">2</span>)
+</li><li>        }
+</li><li>    }
+</li><li>}
+</li></ol></pre></div></div>
+</div>
+<div class="section" id="ID261">
+<h3>Read-Only Computed Properties<a class="headerlink" href="Properties.html#ID261" title="Permalink to this headline">¶</a></h3>
+<p>A computed property with a getter but no setter is known as a <em>read-only computed property</em>. A read-only computed property always returns a value, and can be accessed through dot syntax, but cannot be set to a different value.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must declare computed properties—including read-only computed properties—as variable properties with the <code class="docutils literal"><span class="pre">var</span></code> keyword, because their value is not fixed. The <code class="docutils literal"><span class="pre">let</span></code> keyword is only used for constant properties, to indicate that their values cannot be changed once they are set as part of instance initialization.</p>
+</div>
+<p>You can simplify the declaration of a read-only computed property by removing the <code class="docutils literal"><span class="pre">get</span></code> keyword and its braces:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">Cuboid</span> {
+</li><li>    <span class="k">var</span> <span class="nv">width</span> = <span class="m">0.0</span>, <span class="nv">height</span> = <span class="m">0.0</span>, <span class="nv">depth</span> = <span class="m">0.0</span>
+</li><li>    <span class="k">var</span> <span class="nv">volume</span>: <span class="nc">Double</span> {
+</li><li>        <span class="k">return</span> <span class="nv">width</span> * <span class="nv">height</span> * <span class="nv">depth</span>
+</li><li>    }
+</li><li>}
+</li><li><span class="k">let</span> <span class="nv">fourByFiveByTwo</span> = <span class="nv">Cuboid</span>(<span class="nv">width</span>: <span class="m">4.0</span>, <span class="nv">height</span>: <span class="m">5.0</span>, <span class="nv">depth</span>: <span class="m">2.0</span>)
+</li><li><span class="nv">print</span>(<span class="s">&quot;the volume of fourByFiveByTwo is </span>\<span class="p">(</span><span class="nv">fourByFiveByTwo</span>.<span class="nv">volume</span><span class="p">)</span><span class="s">&quot;</span>)
+</li><li><span class="c">// Prints &quot;the volume of fourByFiveByTwo is 40.0&quot;</span>
+</li></ol></pre></div></div>
+<p>This example defines a new structure called <code class="docutils literal"><span class="pre">Cuboid</span></code>, which represents a 3D rectangular box with <code class="docutils literal"><span class="pre">width</span></code>, <code class="docutils literal"><span class="pre">height</span></code>, and <code class="docutils literal"><span class="pre">depth</span></code> properties. This structure also has a read-only computed property called <code class="docutils literal"><span class="pre">volume</span></code>, which calculates and returns the current volume of the cuboid. It doesn’t make sense for <code class="docutils literal"><span class="pre">volume</span></code> to be settable, because it would be ambiguous as to which values of <code class="docutils literal"><span class="pre">width</span></code>, <code class="docutils literal"><span class="pre">height</span></code>, and <code class="docutils literal"><span class="pre">depth</span></code> should be used for a particular <code class="docutils literal"><span class="pre">volume</span></code> value. Nonetheless, it is useful for a <code class="docutils literal"><span class="pre">Cuboid</span></code> to provide a read-only computed property to enable external users to discover its current calculated volume.</p>
+</div>
+</div>
+<div class="section" id="ID262">
+<h2>Property Observers<a class="headerlink" href="Properties.html#ID262" title="Permalink to this headline">¶</a></h2>
+<p>Property observers observe and respond to changes in a property’s value. Property observers are called every time a property’s value is set, even if the new value is the same as the property’s current value.</p>
+<p>You can add property observers to any stored properties you define, except for lazy stored properties. You can also add property observers to any inherited property (whether stored or computed) by overriding the property within a subclass. You don’t need to define property observers for nonoverridden computed properties, because you can observe and respond to changes to their value in the computed property’s setter. Property overriding is described in <a class="reference internal" href="Inheritance.html#ID196"><span class="std std-ref">Overriding</span></a>.</p>
+<p>You have the option to define either or both of these observers on a property:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">willSet</span></code> is called just before the value is stored.</li>
+<li><code class="docutils literal"><span class="pre">didSet</span></code> is called immediately after the new value is stored.</li>
+</ul>
+<p>If you implement a <code class="docutils literal"><span class="pre">willSet</span></code> observer, it’s passed the new property value as a constant parameter. You can specify a name for this parameter as part of your <code class="docutils literal"><span class="pre">willSet</span></code> implementation. If you don’t write the parameter name and parentheses within your implementation, the parameter is made available with a default parameter name of <code class="docutils literal"><span class="pre">newValue</span></code>.</p>
+<p>Similarly, if you implement a <code class="docutils literal"><span class="pre">didSet</span></code> observer, it’s passed a constant parameter containing the old property value. You can name the parameter or use the default parameter name of <code class="docutils literal"><span class="pre">oldValue</span></code>. If you assign a value to a property within its own <code class="docutils literal"><span class="pre">didSet</span></code> observer, the new value that you assign replaces the one that was just set.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The <code class="docutils literal"><span class="pre">willSet</span></code> and <code class="docutils literal"><span class="pre">didSet</span></code> observers of superclass properties are called when a property is set in a subclass initializer, after the superclass initializer has been called. They are not called while a class is setting its own properties, before the superclass initializer has been called.</p>
+<p class="last">For more information about initializer delegation, see <a class="reference internal" href="Initialization.html#ID215"><span class="std std-ref">Initializer Delegation for Value Types</span></a> and <a class="reference internal" href="Initialization.html#ID219"><span class="std std-ref">Initializer Delegation for Class Types</span></a>.</p>
+</div>
+<p>Here’s an example of <code class="docutils literal"><span class="pre">willSet</span></code> and <code class="docutils literal"><span class="pre">didSet</span></code> in action. The example below defines a new class called <code class="docutils literal"><span class="pre">StepCounter</span></code>, which tracks the total number of steps that a person takes while walking. This class might be used with input data from a pedometer or other step counter to keep track of a person’s exercise during their daily routine.</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">class</span> <span class="nv">StepCounter</span> {
+</li><li>    <span class="k">var</span> <span class="nv">totalSteps</span>: <span class="nc">Int</span> = <span class="m">0</span> {
+</li><li>        <span class="k">willSet</span>(<span class="nv">newTotalSteps</span>) {
+</li><li>            <span class="nv">print</span>(<span class="s">&quot;About to set totalSteps to </span>\<span class="p">(</span><span class="nv">newTotalSteps</span><span class="p">)</span><span class="s">&quot;</span>)
+</li><li>        }
+</li><li>        <span class="k">didSet</span> {
+</li><li>            <span class="k">if</span> <span class="nv">totalSteps</span> &gt; <span class="nv">oldValue</span>  {
+</li><li>                <span class="nv">print</span>(<span class="s">&quot;Added </span>\<span class="p">(</span><span class="nv">totalSteps</span> - <span class="nv">oldValue</span><span class="p">)</span><span class="s"> steps&quot;</span>)
+</li><li>            }
+</li><li>        }
+</li><li>    }
+</li><li>}
+</li><li><span class="k">let</span> <span class="nv">stepCounter</span> = <span class="nv">StepCounter</span>()
+</li><li><span class="nv">stepCounter</span>.<span class="nv">totalSteps</span> = <span class="m">200</span>
+</li><li><span class="c">// About to set totalSteps to 200</span>
+</li><li><span class="c">// Added 200 steps</span>
+</li><li><span class="nv">stepCounter</span>.<span class="nv">totalSteps</span> = <span class="m">360</span>
+</li><li><span class="c">// About to set totalSteps to 360</span>
+</li><li><span class="c">// Added 160 steps</span>
+</li><li><span class="nv">stepCounter</span>.<span class="nv">totalSteps</span> = <span class="m">896</span>
+</li><li><span class="c">// About to set totalSteps to 896</span>
+</li><li><span class="c">// Added 536 steps</span>
+</li></ol></pre></div></div>
+<p>The <code class="docutils literal"><span class="pre">StepCounter</span></code> class declares a <code class="docutils literal"><span class="pre">totalSteps</span></code> property of type <code class="docutils literal"><span class="pre">Int</span></code>. This is a stored property with <code class="docutils literal"><span class="pre">willSet</span></code> and <code class="docutils literal"><span class="pre">didSet</span></code> observers.</p>
+<p>The <code class="docutils literal"><span class="pre">willSet</span></code> and <code class="docutils literal"><span class="pre">didSet</span></code> observers for <code class="docutils literal"><span class="pre">totalSteps</span></code> are called whenever the property is assigned a new value. This is true even if the new value is the same as the current value.</p>
+<p>This example’s <code class="docutils literal"><span class="pre">willSet</span></code> observer uses a custom parameter name of <code class="docutils literal"><span class="pre">newTotalSteps</span></code> for the upcoming new value. In this example, it simply prints out the value that is about to be set.</p>
+<p>The <code class="docutils literal"><span class="pre">didSet</span></code> observer is called after the value of <code class="docutils literal"><span class="pre">totalSteps</span></code> is updated. It compares the new value of <code class="docutils literal"><span class="pre">totalSteps</span></code> against the old value. If the total number of steps has increased, a message is printed to indicate how many new steps have been taken. The <code class="docutils literal"><span class="pre">didSet</span></code> observer does not provide a custom parameter name for the old value, and the default name of <code class="docutils literal"><span class="pre">oldValue</span></code> is used instead.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you pass a property that has observers to a function as an in-out parameter, the <code class="docutils literal"><span class="pre">willSet</span></code> and <code class="docutils literal"><span class="pre">didSet</span></code> observers are always called. This is because of the copy-in copy-out memory model for in-out parameters: The value is always written back to the property at the end of the function. For a detailed discussion of the behavior of in-out parameters, see <a class="reference internal" href="../ReferenceManual/Declarations.html#ID545"><span class="std std-ref">In-Out Parameters</span></a>.</p>
+</div>
+</div>
+<div class="section" id="ID263">
+<h2>Global and Local Variables<a class="headerlink" href="Properties.html#ID263" title="Permalink to this headline">¶</a></h2>
+<p>The capabilities described above for computing and observing properties are also available to <em>global variables</em> and <em>local variables</em>. Global variables are variables that are defined outside of any function, method, closure, or type context. Local variables are variables that are defined within a function, method, or closure context.</p>
+<p>The global and local variables you have encountered in previous chapters have all been <em>stored variables</em>. Stored variables, like stored properties, provide storage for a value of a certain type and allow that value to be set and retrieved.</p>
+<p>However, you can also define <em>computed variables</em> and define observers for stored variables, in either a global or local scope. Computed variables calculate their value, rather than storing it, and they are written in the same way as computed properties.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Global constants and variables are always computed lazily, in a similar manner to <a class="reference internal" href="Properties.html#ID257"><span class="std std-ref">Lazy Stored Properties</span></a>. Unlike lazy stored properties, global constants and variables do not need to be marked with the <code class="docutils literal"><span class="pre">lazy</span></code> modifier.</p>
+<p class="last">Local constants and variables are never computed lazily.</p>
+</div>
+</div>
+<div class="section" id="ID264">
+<h2>Type Properties<a class="headerlink" href="Properties.html#ID264" title="Permalink to this headline">¶</a></h2>
+<p>Instance properties are properties that belong to an instance of a particular type. Every time you create a new instance of that type, it has its own set of property values, separate from any other instance.</p>
+<p>You can also define properties that belong to the type itself, not to any one instance of that type. There will only ever be one copy of these properties, no matter how many instances of that type you create. These kinds of properties are called <em>type properties</em>.</p>
+<p>Type properties are useful for defining values that are universal to <em>all</em> instances of a particular type, such as a constant property that all instances can use (like a static constant in C), or a variable property that stores a value that is global to all instances of that type (like a static variable in C).</p>
+<p>Stored type properties can be variables or constants. Computed type properties are always declared as variable properties, in the same way as computed instance properties.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Unlike stored instance properties, you must always give stored type properties a default value. This is because the type itself does not have an initializer that can assign a value to a stored type property at initialization time.</p>
+<p class="last">Stored type properties are lazily initialized on their first access. They are guaranteed to be initialized only once, even when accessed by multiple threads simultaneously, and they do not need to be marked with the <code class="docutils literal"><span class="pre">lazy</span></code> modifier.</p>
+</div>
+<div class="section" id="ID265">
+<h3>Type Property Syntax<a class="headerlink" href="Properties.html#ID265" title="Permalink to this headline">¶</a></h3>
+<p>In C and Objective-C, you define static constants and variables associated with a type as <em>global</em> static variables. In Swift, however, type properties are written as part of the type’s definition, within the type’s outer curly braces, and each type property is explicitly scoped to the type it supports.</p>
+<p>You define type properties with the <code class="docutils literal"><span class="pre">static</span></code> keyword. For computed type properties for class types, you can use the <code class="docutils literal"><span class="pre">class</span></code> keyword instead to allow subclasses to override the superclass’s implementation. The example below shows the syntax for stored and computed type properties:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">SomeStructure</span> {
+</li><li>    <span class="k">static</span> <span class="k">var</span> <span class="nv">storedTypeProperty</span> = <span class="s">&quot;Some value.&quot;</span>
+</li><li>    <span class="k">static</span> <span class="k">var</span> <span class="nv">computedTypeProperty</span>: <span class="nc">Int</span> {
+</li><li>        <span class="k">return</span> <span class="m">1</span>
+</li><li>    }
+</li><li>}
+</li><li><span class="k">enum</span> <span class="nv">SomeEnumeration</span> {
+</li><li>    <span class="k">static</span> <span class="k">var</span> <span class="nv">storedTypeProperty</span> = <span class="s">&quot;Some value.&quot;</span>
+</li><li>    <span class="k">static</span> <span class="k">var</span> <span class="nv">computedTypeProperty</span>: <span class="nc">Int</span> {
+</li><li>        <span class="k">return</span> <span class="m">6</span>
+</li><li>    }
+</li><li>}
+</li><li><span class="k">class</span> <span class="nv">SomeClass</span> {
+</li><li>    <span class="k">static</span> <span class="k">var</span> <span class="nv">storedTypeProperty</span> = <span class="s">&quot;Some value.&quot;</span>
+</li><li>    <span class="k">static</span> <span class="k">var</span> <span class="nv">computedTypeProperty</span>: <span class="nc">Int</span> {
+</li><li>        <span class="k">return</span> <span class="m">27</span>
+</li><li>    }
+</li><li>    <span class="k">class</span> <span class="k">var</span> <span class="nv">overrideableComputedTypeProperty</span>: <span class="nc">Int</span> {
+</li><li>        <span class="k">return</span> <span class="m">107</span>
+</li><li>    }
+</li><li>}
+</li></ol></pre></div></div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The computed type property examples above are for read-only computed type properties, but you can also define read-write computed type properties with the same syntax as for computed instance properties.</p>
+</div>
+</div>
+<div class="section" id="ID266">
+<h3>Querying and Setting Type Properties<a class="headerlink" href="Properties.html#ID266" title="Permalink to this headline">¶</a></h3>
+<p>Type properties are queried and set with dot syntax, just like instance properties. However, type properties are queried and set on the <em>type</em>, not on an instance of that type. For example:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="nv">print</span>(<span class="nv">SomeStructure</span>.<span class="nv">storedTypeProperty</span>)
+</li><li><span class="c">// Prints &quot;Some value.&quot;</span>
+</li><li><span class="nv">SomeStructure</span>.<span class="nv">storedTypeProperty</span> = <span class="s">&quot;Another value.&quot;</span>
+</li><li><span class="nv">print</span>(<span class="nv">SomeStructure</span>.<span class="nv">storedTypeProperty</span>)
+</li><li><span class="c">// Prints &quot;Another value.&quot;</span>
+</li><li><span class="nv">print</span>(<span class="nv">SomeEnumeration</span>.<span class="nv">computedTypeProperty</span>)
+</li><li><span class="c">// Prints &quot;6&quot;</span>
+</li><li><span class="nv">print</span>(<span class="nv">SomeClass</span>.<span class="nv">computedTypeProperty</span>)
+</li><li><span class="c">// Prints &quot;27&quot;</span>
+</li></ol></pre></div></div>
+<p>The examples that follow use two stored type properties as part of a structure that models an audio level meter for a number of audio channels. Each channel has an integer audio level between <code class="docutils literal"><span class="pre">0</span></code> and <code class="docutils literal"><span class="pre">10</span></code> inclusive.</p>
+<p>The figure below illustrates how two of these audio channels can be combined to model a stereo audio level meter. When a channel’s audio level is <code class="docutils literal"><span class="pre">0</span></code>, none of the lights for that channel are lit. When the audio level is <code class="docutils literal"><span class="pre">10</span></code>, all of the lights for that channel are lit. In this figure, the left channel has a current level of <code class="docutils literal"><span class="pre">9</span></code>, and the right channel has a current level of <code class="docutils literal"><span class="pre">7</span></code>:</p>
+<img alt="../_images/staticPropertiesVUMeter_2x.png" class="align-center" src="../_images/staticPropertiesVUMeter_2x.png" style="width: 243px;" />
+<p>The audio channels described above are represented by instances of the <code class="docutils literal"><span class="pre">AudioChannel</span></code> structure:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">struct</span> <span class="nv">AudioChannel</span> {
+</li><li>    <span class="k">static</span> <span class="k">let</span> <span class="nv">thresholdLevel</span> = <span class="m">10</span>
+</li><li>    <span class="k">static</span> <span class="k">var</span> <span class="nv">maxInputLevelForAllChannels</span> = <span class="m">0</span>
+</li><li>    <span class="k">var</span> <span class="nv">currentLevel</span>: <span class="nc">Int</span> = <span class="m">0</span> {
+</li><li>        <span class="k">didSet</span> {
+</li><li>            <span class="k">if</span> <span class="nv">currentLevel</span> &gt; <span class="nv">AudioChannel</span>.<span class="nv">thresholdLevel</span> {
+</li><li>                <span class="c">// cap the new audio level to the threshold level</span>
+</li><li>                <span class="nv">currentLevel</span> = <span class="nv">AudioChannel</span>.<span class="nv">thresholdLevel</span>
+</li><li>            }
+</li><li>            <span class="k">if</span> <span class="nv">currentLevel</span> &gt; <span class="nv">AudioChannel</span>.<span class="nv">maxInputLevelForAllChannels</span> {
+</li><li>                <span class="c">// store this as the new overall maximum input level</span>
+</li><li>                <span class="nv">AudioChannel</span>.<span class="nv">maxInputLevelForAllChannels</span> = <span class="nv">currentLevel</span>
+</li><li>            }
+</li><li>        }
+</li><li>    }
+</li><li>}
+</li></ol></pre></div></div>
+<p>The <code class="docutils literal"><span class="pre">AudioChannel</span></code> structure defines two stored type properties to support its functionality. The first, <code class="docutils literal"><span class="pre">thresholdLevel</span></code>, defines the maximum threshold value an audio level can take. This is a constant value of <code class="docutils literal"><span class="pre">10</span></code> for all <code class="docutils literal"><span class="pre">AudioChannel</span></code> instances. If an audio signal comes in with a higher value than <code class="docutils literal"><span class="pre">10</span></code>, it will be capped to this threshold value (as described below).</p>
+<p>The second type property is a variable stored property called <code class="docutils literal"><span class="pre">maxInputLevelForAllChannels</span></code>. This keeps track of the maximum input value that has been received by <em>any</em> <code class="docutils literal"><span class="pre">AudioChannel</span></code> instance. It starts with an initial value of <code class="docutils literal"><span class="pre">0</span></code>.</p>
+<p>The <code class="docutils literal"><span class="pre">AudioChannel</span></code> structure also defines a stored instance property called <code class="docutils literal"><span class="pre">currentLevel</span></code>, which represents the channel’s current audio level on a scale of <code class="docutils literal"><span class="pre">0</span></code> to <code class="docutils literal"><span class="pre">10</span></code>.</p>
+<p>The <code class="docutils literal"><span class="pre">currentLevel</span></code> property has a <code class="docutils literal"><span class="pre">didSet</span></code> property observer to check the value of <code class="docutils literal"><span class="pre">currentLevel</span></code> whenever it is set. This observer performs two checks:</p>
+<ul class="simple">
+<li>If the new value of <code class="docutils literal"><span class="pre">currentLevel</span></code> is greater than the allowed <code class="docutils literal"><span class="pre">thresholdLevel</span></code>, the property observer caps <code class="docutils literal"><span class="pre">currentLevel</span></code> to <code class="docutils literal"><span class="pre">thresholdLevel</span></code>.</li>
+<li>If the new value of <code class="docutils literal"><span class="pre">currentLevel</span></code> (after any capping) is higher than any value previously received by <em>any</em> <code class="docutils literal"><span class="pre">AudioChannel</span></code> instance, the property observer stores the new <code class="docutils literal"><span class="pre">currentLevel</span></code> value in the <code class="docutils literal"><span class="pre">maxInputLevelForAllChannels</span></code> type property.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the first of these two checks, the <code class="docutils literal"><span class="pre">didSet</span></code> observer sets <code class="docutils literal"><span class="pre">currentLevel</span></code> to a different value. This does not, however, cause the observer to be called again.</p>
+</div>
+<p>You can use the <code class="docutils literal"><span class="pre">AudioChannel</span></code> structure to create two new audio channels called <code class="docutils literal"><span class="pre">leftChannel</span></code> and <code class="docutils literal"><span class="pre">rightChannel</span></code>, to represent the audio levels of a stereo sound system:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="k">var</span> <span class="nv">leftChannel</span> = <span class="nv">AudioChannel</span>()
+</li><li><span class="k">var</span> <span class="nv">rightChannel</span> = <span class="nv">AudioChannel</span>()
+</li></ol></pre></div></div>
+<p>If you set the <code class="docutils literal"><span class="pre">currentLevel</span></code> of the <em>left</em> channel to <code class="docutils literal"><span class="pre">7</span></code>, you can see that the <code class="docutils literal"><span class="pre">maxInputLevelForAllChannels</span></code> type property is updated to equal <code class="docutils literal"><span class="pre">7</span></code>:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="nv">leftChannel</span>.<span class="nv">currentLevel</span> = <span class="m">7</span>
+</li><li><span class="nv">print</span>(<span class="nv">leftChannel</span>.<span class="nv">currentLevel</span>)
+</li><li><span class="c">// Prints &quot;7&quot;</span>
+</li><li><span class="nv">print</span>(<span class="nv">AudioChannel</span>.<span class="nv">maxInputLevelForAllChannels</span>)
+</li><li><span class="c">// Prints &quot;7&quot;</span>
+</li></ol></pre></div></div>
+<p>If you try to set the <code class="docutils literal"><span class="pre">currentLevel</span></code> of the <em>right</em> channel to <code class="docutils literal"><span class="pre">11</span></code>, you can see that the right channel’s <code class="docutils literal"><span class="pre">currentLevel</span></code> property is capped to the maximum value of <code class="docutils literal"><span class="pre">10</span></code>, and the <code class="docutils literal"><span class="pre">maxInputLevelForAllChannels</span></code> type property is updated to equal <code class="docutils literal"><span class="pre">10</span></code>:</p>
+<div class="highlight-swift"><div class="code-sample"><pre class="Swift highlight"><ol class="code-lines"><li><span class="nv">rightChannel</span>.<span class="nv">currentLevel</span> = <span class="m">11</span>
+</li><li><span class="nv">print</span>(<span class="nv">rightChannel</span>.<span class="nv">currentLevel</span>)
+</li><li><span class="c">// Prints &quot;10&quot;</span>
+</li><li><span class="nv">print</span>(<span class="nv">AudioChannel</span>.<span class="nv">maxInputLevelForAllChannels</span>)
+</li><li><span class="c">// Prints &quot;10&quot;</span>
+</li></ol></pre></div></div>
+</div>
+</div>
+</div>
+
+
+    </article>
+    <div class="next_previous">
+        <p class="previous"><a href="ClassesAndStructures.html">Structures and Classes</a></p>
+        <p class="next"><a href="Methods.html">Methods</a></p>
+    </div>
+
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
+</main>
+
+
+<footer role="contentinfo">
+  <aside>
+    <a href="https://swift.org/atom.xml" title="Subscribe to Site Updates"><i class="feed">Subscribe</i></a>
+    <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
+  </aside>
+
+  <p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved.</p>
+  <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
+  <p class="privacy">
+    <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
+    <a href="https://www.apple.com/legal/privacy/en-ww/cookies/">Cookies</a>
+  </p>
+</footer>
+<div id="jump_to_overlay"></div>
+<script src="../_static/javascripts/application.js"></script>
+  </body>
+</html>

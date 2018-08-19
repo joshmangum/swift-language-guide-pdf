@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swift.org - Documentation</title>
+  <meta name="author" content="Apple Inc." />
+  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <link rel="license" href="https://swift.org/LICENSE.txt" />
+  <link rel="stylesheet" media="all" href="https://swift.org/assets/stylesheets/application.css" />
+  <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="https://swift.org/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://swift.org/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="57x57" href="https://swift.org/apple-touch-icon-57x57.png" />
+  <link rel="apple-touch-icon" sizes="72x72" href="https://swift.org/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="https://swift.org/apple-touch-icon-76x76.png" />
+  <link rel="apple-touch-icon" sizes="114x114" href="https://swift.org/apple-touch-icon-114x114.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="https://swift.org/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="144x144" href="https://swift.org/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="https://swift.org/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://swift.org/apple-touch-icon-180x180.png" />
+  <link rel="mask-icon" href="https://swift.org/assets/images/icon-swift.svg" color="#F05339" />
+  
+
+  
+  <link rel="canonical" href="favicon.ico" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@SwiftLang" />
+  
+  <meta name="twitter:title" content="Swift.org" />
+  <meta name="twitter:description" content="Swift is a general-purpose programming language built using a modern approach to safety, performance, and software design patterns." />
+  
+
+  <meta property="og:site_name" content="Swift.org" />
+  <meta property="og:image" content="https://swift.org/touch-icon-ipad-180x180.png" />
+  
+  <meta property="og:title" content="Swift.org" />
+  <meta property="og:url" content="https://swift.org" />
+  <meta property="og:description" content="Swift is a general-purpose programming language built using a modern approach to safety, performance, and software design patterns." />
+  
+</head>
+
+<body>
+
+<nav role="navigation">
+  <header role="banner">
+    <h1 id="logo">
+      <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
+        Swift.org
+      </a>
+    </h1>
+  </header>
+
+  <div id="menu-toggle" class="menu-toggle open"></div>
+
+  <ul>
+    
+    
+    <li>
+    
+      <a href="https://swift.org/about/">About Swift</a>
+      
+    </li>
+
+    
+    
+    <li>
+    
+      <a href="https://swift.org/blog/">Blog</a>
+    </li>
+
+    
+    
+    <li>
+    
+      <a href="https://swift.org/download/">Download</a>
+      
+    </li>
+
+    
+    
+    <li>
+    
+      <a href="https://swift.org/getting-started/">Getting Started</a>
+      
+    </li>
+
+    
+    
+    <li class="active">
+    
+      <a href="favicon.ico">Documentation</a>
+      
+      <ul>
+        <li><a href="favicon.ico#the-swift-programming-language">The Swift Programming Language</a></li>
+        <li><a href="favicon.ico#api-design-guidelines">API Design Guidelines</a></li>
+        <li><a href="favicon.ico#migration-guides">Migration Guides</a></li>
+      </ul>
+      
+    </li>
+
+    
+    
+    <li>
+    
+      <a href="https://swift.org/source-code/">Source Code</a>
+      
+    </li>
+
+    
+    
+    <li>
+    
+      <a href="https://swift.org/community/">Community</a>
+      
+    </li>
+
+    
+    
+    <li>
+    
+      <a href="https://swift.org/contributing/">Contributing</a>
+      
+    </li>
+
+    
+    
+    <li>
+    
+      <a href="https://swift.org/continuous-integration/">Continuous Integration</a>
+      
+    </li>
+
+    
+    
+    <li>
+    
+      <a href="https://swift.org/source-compatibility/">Source Compatibility</a>
+      
+    </li>
+  </ul>
+
+
+    <h2>Focus Areas</h2>
+    <ul>
+      
+      
+      <li>
+      
+        <a href="https://swift.org/abi-stability/">ABI Stability</a>
+        
+      </li>
+
+      
+      
+      <li>
+      
+        <a href="https://swift.org/server-apis/">Server APIs <small><small><small><i>(Work Group)</i></small></small></small></a>
+      </li>
+    </ul>
+
+  <h2>Projects</h2>
+  <ul>
+      
+      
+      <li>
+      
+        <a href="https://swift.org/compiler-stdlib/">Compiler and Standard Library</a>
+        
+      </li>
+
+      
+      
+      <li>
+      
+        <a href="https://swift.org/package-manager/">Package Manager</a>
+        
+      </li>
+
+      
+      
+      <li>
+      
+        <a href="https://swift.org/core-libraries/">Core Libraries</a>
+        
+      </li>
+
+      
+      
+      <li>
+      
+        <a href="https://swift.org/lldb/">REPL, Debugger &amp; Playgrounds</a>
+        
+      </li>
+
+  </ul>
+</nav>
+
+
+<main role="main">
+  <article class="page">
+  <header>
+    <h1>Documentation</h1>
+  </header>
+
+  <p>You can use the resources on this page as documentation for the Swift language.
+Apple hosts <a href="https://developer.apple.com/swift/resources/">additional resources for learning Swift</a>—such as videos, sample code and playgrounds, and additional documentation—including 
+the <a href="https://developer.apple.com/documentation/swift/swift_standard_library/">Swift standard library reference</a>.</p>
+
+<h2 id="the-swift-programming-language">The Swift Programming Language</h2>
+
+<p><em>The Swift Programming Language</em> is the authoritative reference for Swift,
+offering a guided tour, a comprehensive guide, and a formal reference of the language.
+You can read the book here:</p>
+
+<div class="links">
+  <ul>
+    <li><a href="swift-book/index.html">The Swift Programming Language</a>
+      <ul>
+        <li><a href="swift-book/GuidedTour/GuidedTour.html">A Swift Tour</a></li>
+        <li><a href="swift-book/LanguageGuide/TheBasics.html">Language Guide</a></li>
+        <li><a href="swift-book/ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<p>You can also <a href="https://swift.org/documentation/TheSwiftProgrammingLanguage(Swift4.2).epub">download the latest version as an ePub</a>, available under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International (CC BY 4.0) License</a>.</p>
+
+<h4 id="translations">Translations</h4>
+
+<p>We encourage you to participate in translating <em>The Swift Programming Language</em> into other languages. 
+Get involved with an existing translation project, or start a new one where there’s a need. 
+A great example is <a href="https://github.com/numbbbbb/the-swift-programming-language-in-chinese">The Swift Programming Language (Chinese translation, GitHub project)</a>.</p>
+
+<div class="info">
+  <p>If you know of a quality translation project underway, 
+please let us know on the <a href="https://forums.swift.org/c/development/compiler">Compiler Development</a> forums,
+and we’ll do our best to provide a link to that project from this page.</p>
+</div>
+
+<h2 id="api-design-guidelines">API Design Guidelines</h2>
+
+<p>A goal of the Swift 3.0 release was
+to set a uniform standard for the 
+programmer’s user experience, much of which is defined by the names
+and idioms that appear in APIs.  These
+<a href="https://swift.org/documentation/api-design-guidelines/">design guidelines</a> explain how to 
+make sure that your code feels like a part of the larger Swift ecosystem.</p>
+
+<h2 id="migration-guides">Migration Guides</h2>
+
+<p>Xcode includes a Swift Migrator tool that helps you migrate your project to the latest version of Swift, 
+or update it to work with the latest SDKs.</p>
+
+<div class="links">
+  <ul>
+    <li><a href="https://swift.org/migration-guide-swift4.2/">Migrating to Swift 4.2</a></li>
+    <li><a href="https://swift.org/migration-guide-swift4/">Migrating to Swift 4</a></li>
+  </ul>
+</div>
+
+
+</article>
+
+</main>
+
+<footer role="contentinfo">
+  <aside>
+    <a href="https://swift.org/atom.xml" title="Subscribe to Site Updates"><i class="feed"></i></a>
+    <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter"></i></a>
+  </aside>
+
+  <p class="copyright">Copyright © 2018 Apple Inc. All rights reserved.</p>
+  <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
+  <p class="privacy">
+    <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
+    <a href="https://www.apple.com/legal/privacy/en-ww/cookies/">Cookies</a>
+  </p>
+</footer>
+
+
+<script type="text/javascript">
+var s_account="dappswiftorg";
+</script>
+<script type="text/javascript" src="https://swift.org/assets/javascripts/vendor/s_code_h.js"></script>
+<script src="https://swift.org/assets/javascripts/application.js"></script>
+<script type="text/javascript">
+s.pageName=AC.Tracking.pageName();
+var s_code=s.t();if(s_code)document.write(s_code);
+</script>
+</body>
+</html>
