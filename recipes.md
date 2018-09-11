@@ -14,7 +14,7 @@ To make a copy of the whole documentation site, we'll download the html into the
 
 ### Make a copy to work on
 
-To create a copy of the html to modify, copy `source/` to `final/`. We'll keep `source\` unchanged.
+To create a copy of the html to modify, copy `source/` to `final/`. We'll keep `source/` unchanged.
 
 ```
 > cp -r source final
