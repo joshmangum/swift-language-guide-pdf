@@ -8,7 +8,7 @@ This project offers
 
 ### Grab and go 
 
-#### PDFs
+##### Full page PDFs
 
 [Letter size PDF](./2018-06-04/pdfs/Letter_The_Swift_Programming_Language_Guide_4.2.pdf) 
 
