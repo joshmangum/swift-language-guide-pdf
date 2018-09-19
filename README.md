@@ -1,31 +1,31 @@
-## Swift Book Pdf
+## Swift Book PDF
 
 This project offers
 
-* Pdf versions of the [Swift Language Guide](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html). 
-* A script for downloading and transforming the html from Swift's documentation site into one big html file. Which is then printable to a pdf using your browser.
-* Swift Language Guide on one html file for easy searching.
+* PDF versions of the [Swift Language Guide](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html) book. 
+* A script for downloading and transforming the html from Swift's site into one big html file. Which is then printable to a PDF using your browser.
+* Swift Language Guide on one html file (great for easy searching).
 
 ### Grab and go 
 
-#### Pdfs
+##### Full page PDFs
 
-[Letter size pdf](./2018-06-04/pdfs/Letter_The_Swift_Programming_Language_Guide_4.2.pdf) 
+[Letter size PDF](./2018-06-04/pdfs/Letter_The_Swift_Programming_Language_Guide_4.2.pdf) 
 
-[A4 size pdf](./2018-06-04/pdfs/A4_The_Swift_Programming_Language_Guide_4.2.pdf)
+[A4 size PDF](./2018-06-04/pdfs/A4_The_Swift_Programming_Language_Guide_4.2.pdf)
 
-##### Booklet pdfs
+##### Booklet PDFs
 
-Booklet pdfs can be folded in half and stapled along the fold to make booklets. Three booklets together make up the entire book.
+Booklet PDFs can be folded in half and stapled along the fold to make booklets. The whole book can be printed as three booklets.
 
 Printed, they look like this:
 
 ![Booklets](./IMG_8592.JPG)
 
 
-  - [Booklet 1 pdf](./2018-06-04/pdfs/Booklet1_The_Swift_Programming_Language_Guide_4.2.pdf)
-  - [Booklet 2 pdf](./2018-06-04/pdfs/Booklet2_The_Swift_Programming_Language_Guide_4.2.pdf)
-  - [Booklet 3 pdf](./2018-06-04/pdfs/Booklet3_The_Swift_Programming_Language_Guide_4.2.pdf)
+  - [Booklet 1 PDF](./2018-06-04/pdfs/Booklet1_The_Swift_Programming_Language_Guide_4.2.pdf)
+  - [Booklet 2 PDF](./2018-06-04/pdfs/Booklet2_The_Swift_Programming_Language_Guide_4.2.pdf)
+  - [Booklet 3 PDF](./2018-06-04/pdfs/Booklet3_The_Swift_Programming_Language_Guide_4.2.pdf)
 
 
 #### View as one html page
@@ -36,12 +36,16 @@ To view the whole book in one html page download the repo. Then in the repo dire
 > python -m http.server 8080
 ```
 
-Then hit http://localhost:8080/LanguageGuide/WholeBook.html in your browser
+Then open http://localhost:8080/LanguageGuide/WholeBook.html in your browser
 
 
 ### How to
 
-[Recipes](recipes.md) explains how to go from scraping the Swift site to generating the final pdf.
+Want something slightly different?
+
+[Recipes](recipes.md) explains how to go from scraping the Swift site to generating the PDFs.
+
+Happy to accept pull requests.
 
 ### Credits
 
