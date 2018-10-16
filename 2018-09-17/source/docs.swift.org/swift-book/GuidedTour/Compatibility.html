@@ -1,0 +1,136 @@
+
+
+<!DOCTYPE html>
+
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Apple Inc." />
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    
+    <title>Version Compatibility &mdash; The Swift Programming Language (Swift 4.2)</title>
+    
+    <link rel="license" href="https://docs.swift.org/LICENSE.txt" />
+    <link rel="stylesheet" media="all" href="../_static/stylesheets/application.css" />
+    <link rel="stylesheet" media="all" href="../_static/stylesheets/tspl.css" />
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" type="image/vnd.microsoft.icon" href="../../favicon.ico" />
+    <link rel="apple-touch-icon" href="https://docs.swift.org/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="https://docs.swift.org/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://docs.swift.org/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="https://docs.swift.org/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://docs.swift.org/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="https://docs.swift.org/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://docs.swift.org/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="https://docs.swift.org/apple-touch-icon-152x152.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="https://docs.swift.org/apple-touch-icon-180x180.png" />
+    <link rel="mask-icon" href="https://docs.swift.org/assets/images/icon-swift.svg" color="#F05339" /> 
+  </head>
+  <body>
+
+
+<nav role="navigation">
+    <header role="banner">
+      <h1 id="logo">
+        <a href="https://swift.org/" title="Swift.org" role="img" aria-label="Swift.org">
+          Swift.org
+        </a>
+      </h1>
+    </header>
+
+    <div id="menu-toggle" class="menu-toggle open"></div>
+
+    <h2>The Swift Programming Language<div>Swift 4.2</div></h2>
+
+    <ul>
+    <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Welcome to Swift</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html">About Swift</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="Compatibility.html#">Version Compatibility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="GuidedTour.html">A Swift Tour</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../LanguageGuide/TheBasics.html">Language Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ReferenceManual/AboutTheLanguageReference.html">Language Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RevisionHistory/RevisionHistory.html">Revision History</a></li>
+</ul>
+
+    <li class="toctree-l1 return"><a class="reference internal" href="https://swift.org/">← Return to Swift.org</a></li>
+    </ul>
+</nav>
+
+
+
+
+<main role="main">
+    <article class="page">
+        <menu id="bashful" type="toolbar">
+          <div class="inner">
+            <menuitem id="jump_to" class="menu-bar-item closed">
+            <span id="jump_to_toggle">On This Page</span>
+            <div class="chevron">
+                <div class="chevy chevron-left"></div>
+                <div class="chevy chevron-right"></div>
+            </div>
+            <menu type="list" class="details">
+                <ul>
+<li><a class="reference internal" href="Compatibility.html#">Version Compatibility</a></li>
+</ul>
+
+            </menu>
+            </menuitem>
+          </div>
+        </menu>
+
+        
+  <div class="section" id="version-compatibility">
+<h1>Version Compatibility<a class="headerlink" href="Compatibility.html#version-compatibility" title="Permalink to this headline">¶</a></h1>
+<p>This book describes Swift 4.2, the default version of Swift that’s included in Xcode 10.0. You can use Xcode 10.0 to build targets that are written in either Swift 4 or Swift 3.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">When the Swift 4.2 compiler is working with Swift 3 code, it identifies its language version as 3.4. As a result, you can use conditional compilation blocks like <code class="docutils literal notranslate"><span class="pre">#if</span> <span class="pre">swift(&gt;=3.4)</span></code> to write code that’s compatible with multiple versions of the Swift compiler.</p>
+</div>
+<p>When you use Xcode 9.2 to build Swift 3 code, most of the new Swift 4 functionality is available. That said, the following features are available only to Swift 4 code:</p>
+<ul class="simple">
+<li>Substring operations return an instance of the <code class="docutils literal notranslate"><span class="pre">Substring</span></code> type, instead of <code class="docutils literal notranslate"><span class="pre">String</span></code>.</li>
+<li>The <code class="docutils literal notranslate"><span class="pre">&#64;objc</span></code> attribute is implicitly added in fewer places.</li>
+<li>Extensions to a type in the same file can access that type’s private members.</li>
+</ul>
+<p>A target written in Swift 4 can depend on a target that’s written in Swift 3, and vice versa. This means, if you have a large project that’s divided into multiple frameworks, you can migrate your code from Swift 3 to Swift 4 one framework at a time.</p>
+</div>
+
+
+    </article>
+    <div class="next_previous">
+        <p class="previous"><a href="../index.html">About Swift</a></p>
+        <p class="next"><a href="GuidedTour.html">A Swift Tour</a></p>
+    </div>
+
+    <div class="admonition-beta admonition">
+        <p class="first admonition-title">Beta Software</p>
+        <p>
+          This documentation contains preliminary information about an API or technology in development.
+          This information is subject to change, and software implemented according to this documentation should be tested with final operating system software.
+        </p>
+        <p class="last"><a class="reference external" href="https://developer.apple.com/support/beta-software/">Learn more about using Apple's beta software</a></p>
+    </div>
+</main>
+
+
+<footer role="contentinfo">
+  <aside>
+    <a href="https://swift.org/atom.xml" title="Subscribe to Site Updates"><i class="feed">Subscribe</i></a>
+    <a href="https://twitter.com/swiftlang" rel="nofollow" title="Follow @SwiftLang on Twitter"><i class="twitter">Twitter</i></a>
+  </aside>
+
+  <p class="copyright">Copyright &copy; 2018 Apple Inc. All rights reserved.</p>
+  <p class="trademark">Swift and the Swift logo are trademarks of Apple Inc.</p>
+  <p class="privacy">
+    <a href="https://www.apple.com/privacy/privacy-policy/">Privacy Policy</a>
+    <a href="https://www.apple.com/legal/privacy/en-ww/cookies/">Cookies</a>
+  </p>
+</footer>
+<div id="jump_to_overlay"></div>
+<script src="../_static/javascripts/application.js"></script>
+  </body>
+</html>

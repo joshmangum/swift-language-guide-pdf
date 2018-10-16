@@ -1,7 +1,19 @@
+#!/usr/bin/python3
+
 from bs4 import BeautifulSoup
 
-directory = '2018-06-04/source/docs.swift.org/swift-book/LanguageGuide/'
-directoryWrite = '2018-06-04/final/docs.swift.org/swift-book/LanguageGuide/'
+import sys, argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("--revision", help="Document revision date like 2018-09-17", required=True)
+args = parser.parse_args()
+revision = ''
+if (args.revision):
+    revision = args.revision
+
+print('assembling revision', revision)
+directory = revision +'/source/docs.swift.org/swift-book/LanguageGuide/'
+directoryWrite = revision+'/final/docs.swift.org/swift-book/LanguageGuide/'
 
 with open(directory + '/TheBasics.html') as fp:
     sp = BeautifulSoup(fp, 'html.parser')
