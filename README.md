@@ -20,6 +20,8 @@ The world needs a nice paper version of the Swift Language Guide, it's terrific 
 
 ##### Booklets PDF
 
+  - [Booklets PDF](https://github.com/joshmangum/swift-language-guide-pdf/releases/download/v2018-09-17/Booklet_The_Swift_Programming_Language_Guide_4.2.pdf)
+
 The Booklets PDF is for printing double sided, double page booklets of the book. The whole book is printed as four booklets, each should be folded in half and stapled along the fold. In the PDF, there is a blank page between each booklet.
 
 Printed, they look like this:
@@ -27,7 +29,6 @@ Printed, they look like this:
 ![Booklets](./IMG_8592.JPG)
 
 
-  - [Booklets PDF](https://github.com/joshmangum/swift-language-guide-pdf/releases/download/v2018-09-17/Booklet_The_Swift_Programming_Language_Guide_4.2.pdf)
 
 #### View as one html page
 
