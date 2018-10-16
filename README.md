@@ -14,25 +14,24 @@ The world needs a nice paper version of the Swift Language Guide, it's terrific 
 
 ##### Full page PDFs
 
-[Letter size PDF](https://github.com/joshmangum/swift-language-guide-pdf/releases/download/v2018-09-17/Letter_The_Swift_Programming_Language_Guide_4.2.pdf) 
+  - [Letter size PDF](https://github.com/joshmangum/swift-language-guide-pdf/releases/download/v2018-09-17/Letter_The_Swift_Programming_Language_Guide_4.2.pdf) 
 
-[A4 size PDF](https://github.com/joshmangum/swift-language-guide-pdf/releases/download/v2018-09-17/A4_The_Swift_Programming_Language_Guide_4.2.pdf)
+  - [A4 size PDF](https://github.com/joshmangum/swift-language-guide-pdf/releases/download/v2018-09-17/A4_The_Swift_Programming_Language_Guide_4.2.pdf)
 
 ##### Booklets PDF
 
   - [Booklets PDF](https://github.com/joshmangum/swift-language-guide-pdf/releases/download/v2018-09-17/Booklet_The_Swift_Programming_Language_Guide_4.2.pdf)
 
-The Booklets PDF is for printing double sided, double page booklets of the book. The whole book is printed as four booklets, each should be folded in half and stapled along the fold. In the PDF, there is a blank page between each booklet.
+The Booklets PDF is for printing double sided, double page booklets of the book. This is probably the nicest way to read the book. (And saves a bit of ink and paper). The whole book is printed as four booklets, each should be folded in half and stapled along the fold. In the PDF, there is a blank page between each booklet so you know where to seperate them.
 
-Printed, they look like this:
+Printed and stapled, they look like this:
 
 ![Booklets](./IMG_8592.JPG)
 
 
-
 #### View as one html page
 
-Viewing the whole book in one html page is really nice for searching. To view in your browser, download the repo, then in the repo directory type
+Viewing the whole book in one html page is nice for searching. To view in your browser, download the repo, then in the repo directory type
 
 ```
 > cd <revision date>/final/docs.swift.org/swift-book/
