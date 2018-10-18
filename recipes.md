@@ -1,12 +1,12 @@
-## Making the pdf from Swift.org documentation
+## How to make PDFs of Swift.org documentation
 
 ### Retrieve html source
 
-Let's make a copy of the whole documentation site. 
+Let's download a copy of the swift.org documentation. 
 
-We'll make a directory named `source` and download the swift documentation site in it.
+We'll make a directory named `source` and download into it.
 
-`<revision date>` is the date the documentation was revised, it's in the [revision history](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html) on the swift.org documentation site. It's in the form `2018-09-17`
+Swift.org has a [revision history](https://docs.swift.org/swift-book/RevisionHistory/RevisionHistory.html) that tells you when the documentation was last updated. We'll use the latest one as `<revision date>`, it's in the form `2018-09-17`
 
 ```
 > mkdir -p <revision date>/source
@@ -55,7 +55,7 @@ If the python server from above isn't still running:
 > python3 -m http.server 8080
 ```
 
-Now open `http://localhost:8080/LanguageGuide/WholeBook.html` in your browser. All the sections under "Language Guide" will be together in one html page ready for reference or to print. 
+Now open `http://localhost:8080/LanguageGuide/WholeBook.html` in your browser. All the sections under "Language Guide" will be together in one html page. This is useful on it's own as a good place to search though the whole book just using your browser's search in page.
 
 ### Copy edited css to overwrite existing css file
 
@@ -70,7 +70,7 @@ You can diff `./application.css` against `<revision date>/source/docs.swift.org/
 ```
 diff ./application.css <revision date>/source/docs.swift.org/swift-book/_static/stylesheets/application.css
 ```
-This is great place to make any style changes to the document before converting to pdf. Just edit the css and reload your browser.
+This is great place to make any style changes to the document before converting to pdf. Just edit the css, reload your browser, and print to pdf to see changes.
 
 In the application.css file the edits are inside the print media query, look for:
 ```css
@@ -97,7 +97,7 @@ Letter: Chrome (not system) print, Letter size, 100% scale, all defaults, then S
 
 A4: Chrome (not system) print, A4 size, 100% scale, all defaults, then Save
 
-Booklet: This was a lot of eyeballing and guessing using CreateBooklet but the result is pretty good.
+Booklet: This was a lot of eyeballing and guessing using CreateBooklet, the following is what I used for the existing booklet.
 
 First using Chrome's default dialog, under more settings, Paper Size: Legal, scale: 112%, Margins: None. Then save as pdf.
 
